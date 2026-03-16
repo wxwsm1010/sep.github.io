@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>天地人切片机 | 二级页面</title>
+    <meta name="description" content="天地人切片机官网二级页面" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;800&family=Sora:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./page.css" />
+  </head>
+  <body>
+    <div class="page-wrap">
+      <header class="sub-header">
+        <a class="brand" href="./index.html" aria-label="天地人切片机官网">
+          <span class="brand-mark" aria-hidden="true">
+            <img class="brand-logo-image" data-image-field="brand.logo" alt="天地人切片机 Logo" />
+            <span></span><span></span><span></span><span></span>
+          </span>
+          <span class="brand-text">
+            <strong data-field="brand.name">天地人切片机</strong>
+            <small data-field="brand.sub">TIANDIREN SLICER</small>
+          </span>
+        </a>
+
+        <nav class="sub-nav">
+          <a href="./index.html" data-menu-index="0">首页</a>
+          <div class="nav-dropdown">
+            <a class="nav-parent" href="./products.html" data-menu-index="1">产品中心</a>
+            <div class="dropdown-menu" aria-label="产品中心下拉菜单">
+              <a href="./products.html?category=automatic" data-product-menu-index="0">全自动切片机</a>
+              <a href="./products.html?category=semi-automatic" data-product-menu-index="1">半自动切片机</a>
+              <a href="./products.html?category=vertical" data-product-menu-index="2">立式切片机</a>
+              <a href="./products.html?category=smart" data-product-menu-index="3">智能切片机</a>
+            </div>
+          </div>
+          <a href="./index.html#solutions" data-menu-index="2">解决方案</a>
+          <a href="./index.html#news" data-menu-index="3">新闻资讯</a>
+          <a href="./index.html#about" data-menu-index="4">关于我们</a>
+          <a href="./page.html?slug=after-sales-support" data-menu-index="5">售后保障</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="lang-switch" type="button" aria-label="切换语言">
+            <span class="lang-option is-active" data-lang-option="zh">中文</span>
+            <span class="lang-option" data-lang-option="en">EN</span>
+          </button>
+        </div>
+      </header>
+
+      <main class="sub-main">
+        <section class="sub-hero">
+          <div class="sub-copy">
+            <span class="eyebrow" data-page-field="eyebrow">二级页面</span>
+            <h1 data-page-field="title">页面标题</h1>
+            <p data-page-field="summary">页面摘要</p>
+            <a class="primary-btn" href="#contact" data-page-field="ctaLabel">立即咨询</a>
+          </div>
+          <a class="sub-visual-shell" href="#contact" data-page-link="ctaHref">
+            <img class="sub-visual" data-page-image="image" alt="" />
+          </a>
+        </section>
+
+        <section class="content-section">
+          <article class="content-card">
+            <h2>页面介绍</h2>
+            <p data-page-field="body1">正文内容 1</p>
+          </article>
+          <article class="content-card">
+            <h2>更多信息</h2>
+            <p data-page-field="body2">正文内容 2</p>
+          </article>
+        </section>
+      </main>
+
+      <footer class="sub-footer" id="contact">
+        <div>
+          <strong data-field="footer.brandName">天地人切片机</strong>
+          <p data-field="footer.brandSub">Industrial Slicing Systems</p>
+        </div>
+        <div class="footer-inline">
+          <span data-footer-contact="0">电话：400-800-2026</span>
+          <span data-footer-contact="1">邮箱：info@tdr-slicer.com</span>
+        </div>
+      </footer>
+    </div>
+
+    <script src="./content.js"></script>
+    <script src="./page.js"></script>
+  </body>
+</html>
