@@ -82,18 +82,18 @@ button {
 
 .brand-mark {
   display: inline-grid;
-  grid-template-columns: repeat(4, 11px);
-  gap: 5px;
+  grid-template-columns: repeat(4, 14px);
+  gap: 6px;
   align-items: end;
-  width: 58px;
-  height: 48px;
+  width: 76px;
+  height: 66px;
   position: relative;
-  flex: 0 0 58px;
+  flex: 0 0 76px;
 }
 
 .brand-mark span {
   display: block;
-  width: 11px;
+  width: 14px;
   border-radius: 999px;
   background: linear-gradient(180deg, #ff8790 0%, #ff5a57 100%);
 }
@@ -117,34 +117,87 @@ button {
 }
 
 .brand-mark span:nth-child(1) {
-  height: 24px;
+  height: 32px;
 }
 
 .brand-mark span:nth-child(2) {
-  height: 38px;
+  height: 52px;
 }
 
 .brand-mark span:nth-child(3) {
-  height: 48px;
+  height: 66px;
 }
 
 .brand-mark span:nth-child(4) {
-  height: 28px;
+  height: 38px;
 }
 
 .brand-text strong,
 .footer-logo strong {
   display: block;
   font-family: "Sora", sans-serif;
-  font-size: 1.34rem;
+  font-size: 1.92rem;
   line-height: 1.1;
 }
 
 .brand-text small,
 .footer-logo p {
   color: var(--muted);
-  font-size: 0.86rem;
-  letter-spacing: 0.16em;
+  font-size: 1.04rem;
+  letter-spacing: 0.2em;
+}
+
+.brand {
+  gap: 18px;
+}
+
+.brand .brand-mark {
+  grid-template-columns: repeat(4, 22px);
+  gap: 9px;
+  width: 154px;
+  height: 136px;
+  flex-basis: 154px;
+  overflow: visible;
+}
+
+.brand .brand-mark span {
+  width: 22px;
+}
+
+.brand .brand-mark span:nth-child(1) {
+  height: 64px;
+}
+
+.brand .brand-mark span:nth-child(2) {
+  height: 102px;
+}
+
+.brand .brand-mark span:nth-child(3) {
+  height: 136px;
+}
+
+.brand .brand-mark span:nth-child(4) {
+  height: 78px;
+}
+
+.brand .brand-logo-image.has-image {
+  inset: -18%;
+  width: 136%;
+  height: 136%;
+  object-fit: cover;
+  object-position: center;
+  transform: none;
+}
+
+.brand .brand-text strong {
+  font-size: 2.12rem;
+}
+
+.brand .brand-text small {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.14rem;
+  letter-spacing: 0.19em;
 }
 
 .main-nav {
@@ -331,12 +384,12 @@ button {
 }
 
 .hero {
-  padding: 92px 0 126px;
+  padding: 108px 0 148px;
 }
 
 .hero-copy {
   max-width: 860px;
-  margin: 0 auto 58px;
+  margin: 0 auto 74px;
   text-align: center;
 }
 
@@ -386,7 +439,7 @@ button {
   display: flex;
   justify-content: center;
   gap: 16px;
-  margin-top: 38px;
+  margin-top: 46px;
 }
 
 .hero-slider {
