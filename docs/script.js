@@ -21,6 +21,8 @@ const bindImage = (path) => {
   document.querySelectorAll(`[data-image-field="${path}"]`).forEach((node) => {
     node.src = value || "";
     node.classList.toggle("has-image", Boolean(value));
+    node.decoding = "async";
+    node.loading = path === "brand.logo" ? "eager" : "lazy";
     if (path === "brand.logo") {
       node.closest(".brand-mark")?.classList.toggle("has-image", Boolean(value));
     }
@@ -144,7 +146,7 @@ const renderHero = () => {
                   ? `<video class="visual-upload hero-video has-image" src="${video}" autoplay muted loop playsinline preload="metadata"></video>`
                   : ""
               }
-              <img class="visual-upload hero-visual ${image ? "has-image" : ""}" src="${image}" alt="" />
+              <img class="visual-upload hero-visual ${image ? "has-image" : ""}" src="${image}" alt="" decoding="async" loading="${index === 0 ? "eager" : "lazy"}" fetchpriority="${index === 0 ? "high" : "low"}" />
               ${hasUploadedMedia ? "" : machineMarkup(machineKinds[index % machineKinds.length])}
               ${
                 notes.length && !hasUploadedMedia
@@ -222,7 +224,7 @@ const renderProducts = () => {
       return `
         <article class="product-card ${accent}">
           <span class="tag">${t(card.tag)}</span>
-          <img class="visual-upload product-visual ${image ? "has-image" : ""}" src="${image}" alt="" />
+          <img class="visual-upload product-visual ${image ? "has-image" : ""}" src="${image}" alt="" loading="lazy" decoding="async" />
           ${machineMarkup}
           <div class="product-content">
             <h3>${t(card.title)}</h3>

@@ -1459,6 +1459,14 @@ button {
     --container: calc(100vw - 26px);
   }
 
+  .section,
+  .news-section,
+  .about,
+  .site-footer {
+    content-visibility: auto;
+    contain-intrinsic-size: 720px;
+  }
+
   .page-shell {
     padding-top: 12px;
   }
@@ -1585,21 +1593,25 @@ button {
     height: 42px;
   }
 
+  .hero {
+    padding: 34px 0 72px;
+  }
+
   .hero h1 {
-    font-size: 2rem;
-    line-height: 1.08;
+    font-size: 1.84rem;
+    line-height: 1.12;
     letter-spacing: -0.06em;
   }
 
   .hero-copy {
-    margin-bottom: 18px;
+    margin-bottom: 22px;
     text-align: left;
   }
 
   .hero-copy p {
     margin-top: 14px;
-    font-size: 0.98rem;
-    line-height: 1.8;
+    font-size: 0.94rem;
+    line-height: 1.72;
   }
 
   .hero-actions,
@@ -1618,32 +1630,34 @@ button {
   }
 
   .hero-track {
-    min-height: 690px;
+    min-height: 560px;
   }
 
   .hero-slide {
+    grid-template-columns: 1fr;
     gap: 14px;
-    padding: 20px 16px 58px;
+    padding: 20px 16px 32px;
     border-radius: 26px;
   }
 
   .hero-slide h2 {
-    font-size: 1.52rem;
-    line-height: 1.14;
+    font-size: 1.38rem;
+    line-height: 1.18;
+    margin: 12px 0 10px;
   }
 
   .hero-slide p {
-    font-size: 0.9rem;
-    line-height: 1.7;
+    font-size: 0.88rem;
+    line-height: 1.62;
   }
 
   .machine-card {
-    min-height: 210px;
-    border-radius: 24px;
+    min-height: 182px;
+    border-radius: 22px;
   }
 
   .machine {
-    inset: 24px 14px 48px;
+    inset: 18px 12px 34px;
   }
 
   .machine-notes {
@@ -1659,7 +1673,7 @@ button {
   }
 
   .section {
-    padding-top: 52px;
+    padding-top: 44px;
   }
 
   .section-heading {
@@ -1670,8 +1684,8 @@ button {
 
   .section h2,
   .about h2 {
-    font-size: 1.92rem;
-    line-height: 1.12;
+    font-size: 1.66rem;
+    line-height: 1.16;
     letter-spacing: -0.05em;
   }
 
@@ -1680,14 +1694,21 @@ button {
   .news-card p,
   .product-content p,
   .solution-copy p {
-    font-size: 0.94rem;
-    line-height: 1.8;
+    font-size: 0.9rem;
+    line-height: 1.68;
   }
 
   .card-rail,
   .card-rail.compact {
-    grid-auto-columns: minmax(92vw, 92vw);
-    gap: 16px;
+    grid-auto-columns: minmax(84vw, 84vw);
+    gap: 14px;
+    padding-bottom: 6px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .card-rail > *,
+  .card-rail.compact > * {
+    scroll-snap-align: start;
   }
 
   .product-card,
@@ -1704,31 +1725,32 @@ button {
   }
 
   .product-card {
-    min-height: 390px;
-    padding: 20px;
+    min-height: 356px;
+    padding: 18px;
   }
 
   .product-content h3,
   .solution-copy h3,
   .news-card h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    line-height: 1.16;
   }
 
   .card-machine {
-    height: 204px;
-    margin: 36px 0 10px;
+    height: 180px;
+    margin: 28px 0 8px;
   }
 
   .solution-card {
-    min-height: 360px;
+    min-height: 332px;
   }
 
   .solution-visual {
-    height: 220px;
+    height: 190px;
   }
 
   .solution-copy {
-    padding: 22px 20px 68px;
+    padding: 18px 18px 60px;
   }
 
   .stats-panel {
@@ -1744,13 +1766,13 @@ button {
   }
 
   .news-card {
-    min-height: 220px;
-    padding: 20px;
+    min-height: 0;
+    padding: 18px;
   }
 
   .news-upload {
-    height: 110px;
-    margin: -20px -20px 16px;
+    height: 96px;
+    margin: -18px -18px 14px;
   }
 
   .site-footer {
