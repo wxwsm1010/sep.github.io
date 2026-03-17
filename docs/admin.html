@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>天地人切片机 | 后台管理</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Sora:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./admin.css" />
+  </head>
+  <body>
+    <div class="admin-shell">
+      <header class="admin-hero">
+        <div class="admin-hero-main">
+          <div class="eyebrow-row">
+            <p>后台管理</p>
+            <span class="hero-pill">内容控制台</span>
+          </div>
+          <h1>天地人切片机官网内容控制台</h1>
+          <p class="hero-desc">统一管理首页轮播、菜单、产品矩阵、方案卡片、新闻资讯、页脚二维码和品牌 Logo。当前后台为轻量内容管理模式，保存后首页会即时读取最新配置。</p>
+          <div class="hero-stats">
+            <div>
+              <strong>7</strong>
+              <span>内容分区</span>
+            </div>
+            <div>
+              <strong>图文统一</strong>
+              <span>支持双语文案与图片上传</span>
+            </div>
+            <div>
+              <strong>即时生效</strong>
+              <span>保存后首页自动读取</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="admin-toolbar-card">
+          <div class="toolbar-top">
+            <span class="toolbar-title">发布工具</span>
+            <span class="toolbar-badge">Local CMS</span>
+          </div>
+          <div class="admin-actions">
+            <a href="./index.html" target="_blank" rel="noreferrer">打开官网</a>
+            <button type="button" id="export-btn">导出配置</button>
+            <label class="import-btn">
+              导入配置
+              <input type="file" id="import-input" accept="application/json" />
+            </label>
+            <button type="button" id="reset-btn" class="danger">恢复默认</button>
+            <button type="button" id="save-btn" class="primary">保存发布</button>
+          </div>
+          <p class="status" id="status">可编辑菜单、文案、海报和图片。保存后首页会读取最新内容。</p>
+        </div>
+      </header>
+
+      <div class="admin-layout">
+        <aside class="admin-sidebar">
+          <div class="sidebar-card">
+            <p>管理分区</p>
+            <a href="#section-brand">品牌与导航</a>
+            <a href="#section-pages">二级页面</a>
+            <a href="#section-hero">首页海报</a>
+            <a href="#section-products">产品矩阵</a>
+            <a href="#section-solutions">解决方案</a>
+            <a href="#section-about">关于我们</a>
+            <a href="#section-news">新闻资讯</a>
+            <a href="#section-footer">页脚与二维码</a>
+          </div>
+          <div class="sidebar-card sidebar-note">
+            <p>编辑建议</p>
+            <span>先上传视觉素材，再补双语文案。</span>
+            <span>首页轮播建议保持 3 到 6 张，阅读节奏更好。</span>
+            <span>产品图优先统一视角，后台整体会更整洁。</span>
+          </div>
+        </aside>
+        <main id="admin-root"></main>
+      </div>
+    </div>
+
+    <script src="./content.js"></script>
+    <script src="./admin.js"></script>
+  </body>
+</html>

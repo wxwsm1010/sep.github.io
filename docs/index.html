@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>天地人切片机 | 高效精准切割解决方案</title>
+    <meta
+      name="description"
+      content="天地人切片机官方网站，提供全自动、半自动、立式切片机及食品加工切割解决方案。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;800&family=Sora:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#top" aria-label="天地人切片机官网">
+          <span class="brand-mark" aria-hidden="true">
+            <img class="brand-logo-image" data-image-field="brand.logo" alt="天地人切片机 Logo" />
+            <span></span><span></span><span></span><span></span>
+          </span>
+          <span class="brand-text">
+            <strong data-field="brand.name">天地人切片机</strong>
+            <small data-field="brand.sub">TIANDIREN SLICER</small>
+          </span>
+        </a>
+
+        <nav class="main-nav" aria-label="主导航">
+          <a href="#top" data-menu-index="0">首页</a>
+          <div class="nav-dropdown">
+            <a class="nav-parent" href="./products.html" data-menu-index="1">产品中心</a>
+            <div class="dropdown-menu" aria-label="产品中心下拉菜单">
+              <a href="./products.html?category=automatic" data-product-menu-index="0">全自动切片机</a>
+              <a href="./products.html?category=semi-automatic" data-product-menu-index="1">半自动切片机</a>
+              <a href="./products.html?category=vertical" data-product-menu-index="2">立式切片机</a>
+              <a href="./products.html?category=smart" data-product-menu-index="3">智能切片机</a>
+            </div>
+          </div>
+          <a href="#solutions" data-menu-index="2">解决方案</a>
+          <a href="#news" data-menu-index="3">新闻资讯</a>
+          <a href="#about" data-menu-index="4">关于我们</a>
+          <a href="./page.html?slug=after-sales-support" data-menu-index="5">售后保障</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="lang-switch" type="button" aria-label="切换语言">
+            <span class="lang-option is-active" data-lang-option="zh">中文</span>
+            <span class="lang-option" data-lang-option="en">EN</span>
+          </button>
+          <a class="ghost-btn header-contact" href="#contact" data-field="header.contact.label">联系我们</a>
+          <button class="menu-toggle" type="button" aria-expanded="false" aria-label="展开菜单">
+            <span></span><span></span>
+          </button>
+        </div>
+      </header>
+      <div class="mobile-nav-backdrop" hidden></div>
+
+      <main id="top">
+        <section class="hero">
+          <div class="hero-copy">
+            <span class="eyebrow" data-field="hero.eyebrow">天地人智能切片装备</span>
+            <h1 data-field="hero.title">天地人切片机 · 高效精准切割解决方案</h1>
+            <p data-field="hero.desc">
+              全自动、半自动、立式全系列覆盖，聚焦食品加工场景，兼顾切割效率、稳定性与长期运维可靠性。
+            </p>
+            <div class="hero-actions">
+              <a class="primary-btn" href="#contact" data-field="hero.primaryLabel">立即咨询</a>
+              <a class="ghost-btn dark" href="#products" data-field="hero.secondaryLabel">查看产品</a>
+            </div>
+          </div>
+
+          <div class="hero-slider" aria-label="首屏轮播">
+            <button class="slider-arrow prev" type="button" data-target="hero" aria-label="上一张">
+              <span></span>
+            </button>
+            <div class="hero-track" data-slider="hero" id="hero-track"></div>
+            <button class="slider-arrow next" type="button" data-target="hero" aria-label="下一张">
+              <span></span>
+            </button>
+
+            <div class="hero-indicators" aria-label="轮播指示器" id="hero-indicators"></div>
+          </div>
+        </section>
+
+        <section class="section" id="products">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow" data-field="products.heading.eyebrow">产品中心</span>
+              <h2 data-field="products.heading.title">天地人切片机产品矩阵</h2>
+              <p data-field="products.heading.desc">覆盖全自动、半自动、立式三大系列，助力食品加工高效生产。</p>
+            </div>
+            <div class="section-nav">
+              <button class="slider-arrow subtle prev" type="button" data-target="products" aria-label="上一组产品">
+                <span></span>
+              </button>
+              <button class="slider-arrow subtle next" type="button" data-target="products" aria-label="下一组产品">
+                <span></span>
+              </button>
+            </div>
+          </div>
+
+          <div class="card-rail" data-slider="products" id="products-rail"></div>
+        </section>
+
+        <section class="section" id="solutions">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow" data-field="solutions.heading.eyebrow">解决方案</span>
+              <h2 data-field="solutions.heading.title">按场景匹配切片工艺</h2>
+              <p data-field="solutions.heading.desc">围绕中央厨房、肉制品加工、生鲜净菜和预制菜工厂，提供更稳定的切片产线配置。</p>
+            </div>
+            <div class="section-nav">
+              <button class="slider-arrow subtle prev" type="button" data-target="solutions" aria-label="上一组方案">
+                <span></span>
+              </button>
+              <button class="slider-arrow subtle next" type="button" data-target="solutions" aria-label="下一组方案">
+                <span></span>
+              </button>
+            </div>
+          </div>
+
+          <div class="card-rail compact" data-slider="solutions">
+            <article class="solution-card">
+              <div class="solution-visual blueprint">
+                <img class="visual-upload solution-upload" data-image-field="solutions.cards.0.image" alt="" />
+                <div class="chip" data-solution-field="chip" data-solution-index="0">中央厨房</div>
+              </div>
+              <div class="solution-copy">
+                <h3 data-solution-field="title" data-solution-index="0">中央厨房产线</h3>
+                <p data-solution-field="desc" data-solution-index="0">连续投料、厚度一致、便于清洗，满足标准化规模加工。</p>
+              </div>
+              <a class="card-link" href="./page.html?slug=central-kitchen-solution" data-solution-link data-solution-index="0" aria-label="查看中央厨房方案"><span></span></a>
+            </article>
+
+            <article class="solution-card">
+              <div class="solution-visual amber">
+                <img class="visual-upload solution-upload" data-image-field="solutions.cards.1.image" alt="" />
+                <div class="chip" data-solution-field="chip" data-solution-index="1">肉制品加工</div>
+              </div>
+              <div class="solution-copy">
+                <h3 data-solution-field="title" data-solution-index="1">肉制品深加工</h3>
+                <p data-solution-field="desc" data-solution-index="1">兼顾切面整齐与组织稳定，适配鲜肉、冻品等多种工况。</p>
+              </div>
+              <a class="card-link" href="./page.html?slug=meat-processing-solution" data-solution-link data-solution-index="1" aria-label="查看肉制品方案"><span></span></a>
+            </article>
+
+            <article class="solution-card">
+              <div class="solution-visual silver">
+                <img class="visual-upload solution-upload" data-image-field="solutions.cards.2.image" alt="" />
+                <div class="chip" data-solution-field="chip" data-solution-index="2">净菜工厂</div>
+              </div>
+              <div class="solution-copy">
+                <h3 data-solution-field="title" data-solution-index="2">净菜切配单元</h3>
+                <p data-solution-field="desc" data-solution-index="2">结构紧凑、占地小，适用于工位密集与多品类切配场景。</p>
+              </div>
+              <a class="card-link" href="./page.html?slug=fresh-cut-factory-solution" data-solution-link data-solution-index="2" aria-label="查看净菜工厂方案"><span></span></a>
+            </article>
+
+            <article class="solution-card">
+              <div class="solution-visual rose">
+                <img class="visual-upload solution-upload" data-image-field="solutions.cards.3.image" alt="" />
+                <div class="chip" data-solution-field="chip" data-solution-index="3">预制菜工厂</div>
+              </div>
+              <div class="solution-copy">
+                <h3 data-solution-field="title" data-solution-index="3">预制菜标准切型</h3>
+                <p data-solution-field="desc" data-solution-index="3">通过稳定的厚度与节拍控制，提升后段腌制与包装一致性。</p>
+              </div>
+              <a class="card-link" href="./page.html?slug=prepared-food-solution" data-solution-link data-solution-index="3" aria-label="查看预制菜方案"><span></span></a>
+            </article>
+          </div>
+        </section>
+
+        <section class="about section" id="about">
+          <div class="about-copy">
+            <span class="eyebrow" data-field="about.eyebrow">关于天地人切片机</span>
+            <h2 data-field="about.title">专注切片设备研发与制造，为食品加工行业提供可靠解决方案</h2>
+            <p data-field="about.p1">
+              天地人切片机深耕食品加工设备领域，围绕切片精度、设备耐用性和售后服务效率持续打磨产品。
+              我们以工程化研发体系、严格品质管控和全国服务网络，为不同规模的食品加工企业提供可长期运行的切割装备。
+            </p>
+            <p data-field="about.p2">
+              从方案设计、设备选型到安装调试、售后维保，团队坚持“让每一刀都更稳定”，帮助客户提升生产效率、降低损耗并实现标准化交付。
+            </p>
+            <div class="mission-box">
+              <strong data-field="about.missionTitle">愿景 / 使命</strong>
+              <p data-field="about.missionDesc">以匠心造好每一台切片机，让生产更高效，让设备更值得信赖。</p>
+            </div>
+          </div>
+
+          <div class="stats-panel">
+            <div class="stat-item">
+              <strong data-stat-field="value" data-stat-index="0">1,200+</strong>
+              <span data-stat-field="label" data-stat-index="0">服务客户数</span>
+            </div>
+            <div class="stat-item">
+              <strong data-stat-field="value" data-stat-index="1">3,800+</strong>
+              <span data-stat-field="label" data-stat-index="1">设备装机量</span>
+            </div>
+            <div class="stat-item">
+              <strong data-stat-field="value" data-stat-index="2">26</strong>
+              <span data-stat-field="label" data-stat-index="2">覆盖省份 / 城市</span>
+            </div>
+            <div class="stat-item">
+              <strong data-stat-field="value" data-stat-index="3">180+</strong>
+              <span data-stat-field="label" data-stat-index="3">合作品牌数</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="section news-section" id="news">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow" data-field="news.heading.eyebrow">新闻资讯</span>
+              <h2 data-field="news.heading.title">关注设备升级与行业动态</h2>
+              <p data-field="news.heading.desc">聚焦产品发布、案例交付和食品加工行业趋势，帮助客户更快完成设备决策。</p>
+            </div>
+          </div>
+          <div class="news-grid">
+            <article class="news-card">
+              <img class="visual-upload news-upload" data-image-field="news.cards.0.image" alt="" />
+              <span data-news-field="tag" data-news-index="0">新品发布</span>
+              <h3 data-news-field="title" data-news-index="0">立式切片机系列正式上线，适配紧凑产线布局</h3>
+              <p data-news-field="desc" data-news-index="0">针对工位密集和特殊物料切割需求，推出更省空间的立式方案。</p>
+            </article>
+            <article class="news-card">
+              <img class="visual-upload news-upload" data-image-field="news.cards.1.image" alt="" />
+              <span data-news-field="tag" data-news-index="1">案例分享</span>
+              <h3 data-news-field="title" data-news-index="1">全自动切片机助力中央厨房提升 35% 出品效率</h3>
+              <p data-news-field="desc" data-news-index="1">通过连续输送与参数标准化，帮助客户降低人工依赖和切片误差。</p>
+            </article>
+            <article class="news-card">
+              <img class="visual-upload news-upload" data-image-field="news.cards.2.image" alt="" />
+              <span data-news-field="tag" data-news-index="2">服务体系</span>
+              <h3 data-news-field="title" data-news-index="2">天地人启动全国售后响应升级计划</h3>
+              <p data-news-field="desc" data-news-index="2">覆盖安装调试、日常巡检和备件支持，进一步缩短服务到场周期。</p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+    </div>
+
+    <footer class="site-footer" id="contact">
+      <div class="site-footer-inner">
+        <div class="footer-branding">
+          <div class="footer-logo">
+            <span class="brand-mark" aria-hidden="true">
+              <img class="brand-logo-image" data-image-field="brand.logo" alt="天地人切片机 Logo" />
+              <span></span><span></span><span></span><span></span>
+            </span>
+            <div>
+              <strong data-field="footer.brandName">天地人切片机</strong>
+              <p data-field="footer.brandSub">Industrial Slicing Systems</p>
+            </div>
+          </div>
+
+          <div class="social-row">
+            <a href="mailto:info@tdr-slicer.com" aria-label="邮箱"></a>
+            <a href="tel:400-800-2026" aria-label="电话"></a>
+            <a href="#" aria-label="微信"></a>
+            <a href="#" aria-label="抖音"></a>
+          </div>
+
+          <div class="qr-grid">
+            <div class="qr-card">
+              <div class="qr-code" data-qr-index="0"></div>
+              <span data-qr-label="0">公众号</span>
+            </div>
+            <div class="qr-card">
+              <div class="qr-code alt" data-qr-index="1"></div>
+              <span data-qr-label="1">官网小程序</span>
+            </div>
+            <div class="qr-card">
+              <div class="qr-code warm" data-qr-index="2"></div>
+              <span data-qr-label="2">客服微信</span>
+            </div>
+          </div>
+
+          <ul class="contact-list">
+            <li data-footer-contact="0">电话：400-800-2026</li>
+            <li data-footer-contact="1">邮箱：info@tdr-slicer.com</li>
+            <li data-footer-contact="2">地址：山东省济南市智能装备产业园 18 号</li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <div data-footer-col="0">
+            <h3 data-footer-col-title="0">产品中心</h3>
+            <a href="#products" data-footer-link="0:0">全自动切片机</a>
+            <a href="#products" data-footer-link="0:1">半自动切片机</a>
+            <a href="#products" data-footer-link="0:2">立式切片机</a>
+            <a href="#products" data-footer-link="0:3">配件服务</a>
+          </div>
+          <div data-footer-col="1">
+            <h3 data-footer-col-title="1">关于我们</h3>
+            <a href="#about" data-footer-link="1:0">公司简介</a>
+            <a href="#about" data-footer-link="1:1">发展历程</a>
+            <a href="#about" data-footer-link="1:2">企业文化</a>
+            <a href="#contact" data-footer-link="1:3">加入我们</a>
+          </div>
+          <div data-footer-col="2">
+            <h3 data-footer-col-title="2">帮助中心</h3>
+            <a href="#contact" data-footer-link="2:0">购买指南</a>
+            <a href="#contact" data-footer-link="2:1">安装调试</a>
+            <a href="#contact" data-footer-link="2:2">售后保障</a>
+            <a href="#contact" data-footer-link="2:3">常见问题</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span data-field="footer.copyright">© 天地人切片机 2026 版权所有</span>
+          <a href="#" data-field="footer.privacy">隐私政策</a>
+          <a href="#" data-field="footer.terms">用户协议</a>
+          <span data-field="footer.icp">备案号：鲁ICP备2026003282号</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./content.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
