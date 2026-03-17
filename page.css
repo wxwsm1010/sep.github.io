@@ -67,10 +67,10 @@ a {
   grid-template-columns: repeat(4, 18px);
   gap: 8px;
   align-items: end;
-  width: 119px;
-  height: 105px;
+  width: 131px;
+  height: 116px;
   position: relative;
-  flex: 0 0 119px;
+  flex: 0 0 131px;
   overflow: visible;
 }
 
@@ -80,10 +80,10 @@ a {
   background: linear-gradient(180deg, #ff8790 0%, #ff5a57 100%);
 }
 
-.brand-mark span:nth-child(2) { height: 48px; }
-.brand-mark span:nth-child(3) { height: 77px; }
-.brand-mark span:nth-child(4) { height: 105px; }
-.brand-mark span:nth-child(5) { height: 61px; }
+.brand-mark span:nth-child(2) { height: 53px; }
+.brand-mark span:nth-child(3) { height: 85px; }
+.brand-mark span:nth-child(4) { height: 116px; }
+.brand-mark span:nth-child(5) { height: 67px; }
 
 .brand-logo-image {
   position: absolute;
@@ -106,13 +106,13 @@ a {
 .brand-text strong {
   display: block;
   font-family: "Sora", sans-serif;
-  font-size: 1.72rem;
+  font-size: 1.55rem;
 }
 
 .brand-text small {
   color: var(--muted);
   margin-top: 10px;
-  font-size: 0.93rem;
+  font-size: 0.84rem;
   letter-spacing: 0.19em;
 }
 
