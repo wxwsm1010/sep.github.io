@@ -64,33 +64,33 @@ a {
 
 .brand-mark {
   display: inline-grid;
-  grid-template-columns: repeat(4, 22px);
-  gap: 9px;
+  grid-template-columns: repeat(4, 18px);
+  gap: 8px;
   align-items: end;
-  width: 154px;
-  height: 136px;
+  width: 122px;
+  height: 108px;
   position: relative;
-  flex: 0 0 154px;
+  flex: 0 0 122px;
   overflow: visible;
 }
 
 .brand-mark span {
-  width: 22px;
+  width: 18px;
   border-radius: 999px;
   background: linear-gradient(180deg, #ff8790 0%, #ff5a57 100%);
 }
 
-.brand-mark span:nth-child(2) { height: 64px; }
-.brand-mark span:nth-child(3) { height: 102px; }
-.brand-mark span:nth-child(4) { height: 136px; }
-.brand-mark span:nth-child(5) { height: 78px; }
+.brand-mark span:nth-child(2) { height: 50px; }
+.brand-mark span:nth-child(3) { height: 80px; }
+.brand-mark span:nth-child(4) { height: 108px; }
+.brand-mark span:nth-child(5) { height: 62px; }
 
 .brand-logo-image {
   position: absolute;
-  inset: -18%;
-  width: 136%;
-  height: 136%;
-  object-fit: cover;
+  inset: -8%;
+  width: 116%;
+  height: 116%;
+  object-fit: contain;
   object-position: center;
   opacity: 0;
 }

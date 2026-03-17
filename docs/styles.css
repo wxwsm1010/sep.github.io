@@ -152,39 +152,39 @@ button {
 }
 
 .brand .brand-mark {
-  grid-template-columns: repeat(4, 22px);
-  gap: 9px;
-  width: 154px;
-  height: 136px;
-  flex-basis: 154px;
+  grid-template-columns: repeat(4, 18px);
+  gap: 8px;
+  width: 122px;
+  height: 108px;
+  flex-basis: 122px;
   overflow: visible;
 }
 
 .brand .brand-mark span {
-  width: 22px;
+  width: 18px;
 }
 
 .brand .brand-mark span:nth-child(1) {
-  height: 64px;
+  height: 50px;
 }
 
 .brand .brand-mark span:nth-child(2) {
-  height: 102px;
+  height: 80px;
 }
 
 .brand .brand-mark span:nth-child(3) {
-  height: 136px;
+  height: 108px;
 }
 
 .brand .brand-mark span:nth-child(4) {
-  height: 78px;
+  height: 62px;
 }
 
 .brand .brand-logo-image.has-image {
-  inset: -18%;
-  width: 136%;
-  height: 136%;
-  object-fit: cover;
+  inset: -8%;
+  width: 116%;
+  height: 116%;
+  object-fit: contain;
   object-position: center;
   transform: none;
 }
