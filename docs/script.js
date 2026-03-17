@@ -222,10 +222,10 @@ const renderProducts = () => {
             `;
 
       return `
-        <article class="product-card ${accent}">
+        <article class="product-card ${accent} ${image ? "has-uploaded-media" : ""}">
           <span class="tag">${t(card.tag)}</span>
           <img class="visual-upload product-visual ${image ? "has-image" : ""}" src="${image}" alt="" loading="lazy" decoding="async" />
-          ${machineMarkup}
+          ${image ? "" : machineMarkup}
           <div class="product-content">
             <h3>${t(card.title)}</h3>
             <p>${t(card.desc)}</p>

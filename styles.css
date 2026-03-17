@@ -969,6 +969,12 @@ button {
   z-index: 0;
 }
 
+.product-card.has-uploaded-media .product-visual {
+  object-fit: contain;
+  object-position: center;
+  padding: 12px 12px 0;
+}
+
 .product-content {
   max-width: 78%;
 }
@@ -1476,6 +1482,7 @@ button {
     padding: 12px 14px;
     gap: 10px;
     border-radius: 20px;
+    grid-template-columns: minmax(0, 1fr) auto auto;
   }
 
   .main-nav {
@@ -1484,6 +1491,8 @@ button {
     top: 72px;
     padding: 12px;
     border-radius: 20px;
+    max-height: calc(100vh - 96px);
+    overflow-y: auto;
   }
 
   .main-nav a {
@@ -1500,6 +1509,10 @@ button {
   .brand,
   .footer-logo {
     gap: 12px;
+  }
+
+  .brand {
+    min-width: 0;
   }
 
   .brand-mark {
@@ -1577,6 +1590,16 @@ button {
     letter-spacing: -0.02em;
   }
 
+  .brand-text {
+    min-width: 0;
+  }
+
+  .brand-text strong {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   .lang-switch {
     padding: 2px;
     font-size: 0.82rem;
@@ -1638,6 +1661,10 @@ button {
     gap: 14px;
     padding: 20px 16px 32px;
     border-radius: 26px;
+  }
+
+  .hero-machine {
+    min-height: 182px;
   }
 
   .hero-slide h2 {
@@ -1729,6 +1756,13 @@ button {
     padding: 18px;
   }
 
+  .product-card.has-uploaded-media {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+  }
+
   .product-content h3,
   .solution-copy h3,
   .news-card h3 {
@@ -1739,6 +1773,11 @@ button {
   .card-machine {
     height: 180px;
     margin: 28px 0 8px;
+  }
+
+  .product-card.has-uploaded-media .product-visual {
+    inset: 10px 10px 118px;
+    padding: 0;
   }
 
   .solution-card {

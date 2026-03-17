@@ -1,0 +1,12 @@
+<svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g fill="#D91F26">
+    <path d="M109.5 24 148 84h-23l-15-24-15 24H72l37.5-60Z"/>
+    <path d="M82 88h55l18 28h-31l-14-20-14 20H65l17-28Z"/>
+    <path d="M58 120h103l16 26H42l16-26Z"/>
+  </g>
+  <g fill="#D91F26" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="42" letter-spacing="10">
+    <text x="52" y="192">SEP</text>
+  </g>
+  <circle cx="177" cy="41" r="17" stroke="#D91F26" stroke-width="6"/>
+  <path d="M171 52V31h9c7 0 10 2 10 7 0 4-2 6-5 7l6 7h-8l-5-6h-1v6h-6Zm6-11h3c3 0 5-1 5-3 0-3-2-3-5-3h-3v6Z" fill="#D91F26"/>
+</svg>
