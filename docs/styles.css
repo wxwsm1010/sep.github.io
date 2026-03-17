@@ -154,9 +154,9 @@ button {
 .brand .brand-mark {
   grid-template-columns: repeat(4, 18px);
   gap: 8px;
-  width: 122px;
-  height: 108px;
-  flex-basis: 122px;
+  width: 98px;
+  height: 86px;
+  flex-basis: 98px;
   overflow: visible;
 }
 
@@ -165,25 +165,25 @@ button {
 }
 
 .brand .brand-mark span:nth-child(1) {
-  height: 50px;
+  height: 40px;
 }
 
 .brand .brand-mark span:nth-child(2) {
-  height: 80px;
+  height: 64px;
 }
 
 .brand .brand-mark span:nth-child(3) {
-  height: 108px;
+  height: 86px;
 }
 
 .brand .brand-mark span:nth-child(4) {
-  height: 62px;
+  height: 50px;
 }
 
 .brand .brand-logo-image.has-image {
-  inset: -8%;
-  width: 116%;
-  height: 116%;
+  inset: -6%;
+  width: 112%;
+  height: 112%;
   object-fit: contain;
   object-position: center;
   transform: none;
