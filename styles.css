@@ -975,6 +975,10 @@ button {
   padding: 12px 12px 0;
 }
 
+.product-card.is-no-media .product-visual {
+  display: none;
+}
+
 .product-content {
   max-width: 78%;
 }

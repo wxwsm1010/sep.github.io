@@ -184,48 +184,16 @@ const renderProducts = () => {
   if (!rail) return;
 
   const accents = ["accent-blue", "accent-silver", "accent-steel", "accent-blue", "accent-silver", "accent-steel"];
-  const machineTypes = ["machine-auto", "machine-semi", "machine-vertical", "machine-auto", "machine-semi", "machine-vertical"];
 
   rail.innerHTML = siteContent.products.cards
     .map((card, index) => {
       const accent = accents[index % accents.length];
-      const machineType = machineTypes[index % machineTypes.length];
       const image = card.image || "";
-      const machineMarkup =
-        machineType === "machine-vertical"
-          ? `
-            <div class="product-art machine ${machineType} card-machine">
-              <span class="machine-tower"></span>
-              <span class="machine-body"></span>
-              <span class="machine-panel"></span>
-              <span class="machine-blade"></span>
-            </div>
-          `
-          : machineType === "machine-semi"
-            ? `
-              <div class="product-art machine ${machineType} card-machine">
-                <span class="machine-top"></span>
-                <span class="machine-body"></span>
-                <span class="machine-panel"></span>
-                <span class="machine-arm"></span>
-                <span class="machine-blade"></span>
-              </div>
-            `
-            : `
-              <div class="product-art machine ${machineType} card-machine">
-                <span class="machine-top"></span>
-                <span class="machine-body"></span>
-                <span class="machine-panel"></span>
-                <span class="machine-wheel"></span>
-                <span class="machine-track"></span>
-              </div>
-            `;
 
       return `
-        <article class="product-card ${accent} ${image ? "has-uploaded-media" : ""}">
+        <article class="product-card ${accent} ${image ? "has-uploaded-media" : "is-no-media"}">
           <span class="tag">${t(card.tag)}</span>
           <img class="visual-upload product-visual ${image ? "has-image" : ""}" src="${image}" alt="" loading="lazy" decoding="async" />
-          ${image ? "" : machineMarkup}
           <div class="product-content">
             <h3>${t(card.title)}</h3>
             <p>${t(card.desc)}</p>
