@@ -1,12 +1,13 @@
 <svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <g fill="#D91F26">
-    <path d="M109.5 24 148 84h-23l-15-24-15 24H72l37.5-60Z"/>
-    <path d="M82 88h55l18 28h-31l-14-20-14 20H65l17-28Z"/>
-    <path d="M58 120h103l16 26H42l16-26Z"/>
+  <g fill="#C32026">
+    <path d="M110 16 154 92H66L110 16Z"/>
+    <path d="M95 88h30v40H95z"/>
+    <path d="M52 112h116l24 40H28l24-40Z"/>
+    <path d="M94 110h32L70 178H36l58-68Z"/>
+    <path d="M94 110h32l58 68h-34l-56-68Z"/>
+    <path d="M58 172h104l20 36H38l20-36Z"/>
   </g>
-  <g fill="#D91F26" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="42" letter-spacing="10">
-    <text x="52" y="192">SEP</text>
-  </g>
-  <circle cx="177" cy="41" r="17" stroke="#D91F26" stroke-width="6"/>
-  <path d="M171 52V31h9c7 0 10 2 10 7 0 4-2 6-5 7l6 7h-8l-5-6h-1v6h-6Zm6-11h3c3 0 5-1 5-3 0-3-2-3-5-3h-3v6Z" fill="#D91F26"/>
+  <path d="M110 132 144 176H76l34-44Z" fill="#fff"/>
+  <circle cx="183" cy="38" r="22" stroke="#C32026" stroke-width="8"/>
+  <path d="M171 66V17h18c16 0 24 6 24 17 0 8-4 14-12 17l14 15h-14l-12-13h-6v13h-12Zm12-24h11c5 0 8-1 10-2s3-4 3-8c0-3-1-5-3-7-2-1-5-2-10-2h-11v19Z" fill="#C32026"/>
 </svg>
