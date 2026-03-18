@@ -377,7 +377,7 @@ a {
   }
 
   .brand {
-    gap: 12px;
+    gap: 10px;
   }
 
   .brand-mark {
@@ -429,8 +429,9 @@ a {
   }
 
   .brand-text strong {
-    font-size: 0.88rem;
+    font-size: 0.82rem;
     letter-spacing: -0.02em;
+    line-height: 1.12;
   }
 
   .brand-text small {
@@ -442,9 +443,9 @@ a {
   }
 
   .lang-option {
-    min-width: 42px;
-    padding: 7px 9px;
-    font-size: 0.82rem;
+    min-width: 36px;
+    padding: 6px 8px;
+    font-size: 0.78rem;
   }
 
   .sub-copy h1 {

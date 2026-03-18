@@ -1480,7 +1480,7 @@ button {
   .site-header {
     top: 8px;
     padding: 12px 14px;
-    gap: 10px;
+    gap: 8px;
     border-radius: 20px;
     grid-template-columns: minmax(0, 1fr) auto auto;
   }
@@ -1508,7 +1508,7 @@ button {
 
   .brand,
   .footer-logo {
-    gap: 12px;
+    gap: 10px;
   }
 
   .brand {
@@ -1587,7 +1587,7 @@ button {
 
   .brand-text strong,
   .footer-logo strong {
-    font-size: 0.88rem;
+    font-size: 0.82rem;
     letter-spacing: -0.02em;
   }
 
@@ -1596,25 +1596,30 @@ button {
   }
 
   .brand-text strong {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    line-height: 1.12;
+  }
+
+  .header-actions {
+    gap: 8px;
   }
 
   .lang-switch {
     padding: 2px;
-    font-size: 0.82rem;
+    font-size: 0.78rem;
   }
 
   .lang-option {
-    min-width: 42px;
-    padding: 7px 9px;
-    font-size: 0.82rem;
+    min-width: 36px;
+    padding: 6px 8px;
+    font-size: 0.78rem;
   }
 
   .menu-toggle {
-    width: 42px;
-    height: 42px;
+    width: 38px;
+    height: 38px;
   }
 
   .hero {
