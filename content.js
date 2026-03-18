@@ -26,7 +26,7 @@ const defaultSiteContent = {
   brand: {
     name: "天地人切片机",
     sub: "TIANDIREN SLICER",
-    logo: "./scene_media/brand-default.svg",
+    logo: "./scene_media/brand-default.png",
   },
   header: {
     contact: {
