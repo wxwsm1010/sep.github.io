@@ -192,8 +192,10 @@ const renderProducts = () => {
 
       return `
         <article class="product-card ${accent} ${image ? "has-uploaded-media" : "is-no-media"}">
-          <span class="tag">${t(card.tag)}</span>
-          <img class="visual-upload product-visual ${image ? "has-image" : ""}" src="${image}" alt="" loading="lazy" decoding="async" />
+          <div class="product-media-shell">
+            <span class="tag">${t(card.tag)}</span>
+            <img class="visual-upload product-visual ${image ? "has-image" : ""}" src="${image}" alt="" loading="lazy" decoding="async" />
+          </div>
           <div class="product-content">
             <h3>${t(card.title)}</h3>
             <p>${t(card.desc)}</p>

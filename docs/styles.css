@@ -950,9 +950,10 @@ button {
 .tag {
   position: absolute;
   top: 18px;
-  right: 18px;
+  left: 18px;
   background: rgba(255, 255, 255, 0.88);
   color: var(--ink);
+  z-index: 2;
 }
 
 .card-machine {
@@ -964,23 +965,41 @@ button {
 }
 
 .product-visual {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.product-media-shell {
+  position: relative;
+  height: 248px;
+  margin: -4px -4px 24px;
+  overflow: hidden;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.34), transparent 26%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(239, 243, 248, 0.84));
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
 }
 
 .product-card.has-uploaded-media .product-visual {
   object-fit: contain;
   object-position: center;
-  padding: 12px 12px 0;
+  padding: 34px 20px 14px;
 }
 
 .product-card.is-no-media .product-visual {
   display: none;
 }
 
+.product-card.is-no-media .product-media-shell {
+  display: none;
+}
+
 .product-content {
-  max-width: 78%;
+  max-width: 100%;
 }
 
 .product-content h3,
@@ -993,7 +1012,7 @@ button {
 }
 
 .product-content p {
-  margin-top: 16px;
+  margin-top: 12px;
   color: rgba(255, 255, 255, 0.84);
 }
 
@@ -1775,15 +1794,34 @@ button {
   }
 
   .product-card {
-    min-height: 332px;
-    padding: 18px;
+    min-height: 0;
+    padding: 14px;
+    border-radius: 28px;
+    background: #fff;
+    border: 1px solid rgba(17, 23, 34, 0.06);
+    box-shadow: 0 22px 48px rgba(17, 23, 34, 0.08);
+    color: var(--ink);
   }
 
   .product-card.has-uploaded-media {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
     overflow: hidden;
+  }
+
+  .product-card::before {
+    display: none;
+  }
+
+  .product-media-shell {
+    height: 196px;
+    margin: 0 0 16px;
+    border-radius: 22px;
+    background:
+      radial-gradient(circle at top right, rgba(255, 255, 255, 0.84), transparent 28%),
+      linear-gradient(180deg, #f7f9fc, #eef2f7);
+    box-shadow: inset 0 0 0 1px rgba(17, 23, 34, 0.04);
   }
 
   .product-content {
@@ -1795,8 +1833,8 @@ button {
   .product-content h3,
   .solution-copy h3,
   .news-card h3 {
-    font-size: 1.12rem;
-    line-height: 1.16;
+    font-size: 1.08rem;
+    line-height: 1.18;
   }
 
   .card-machine {
@@ -1805,29 +1843,58 @@ button {
   }
 
   .product-card.has-uploaded-media .product-visual {
-    inset: 14px 14px 104px;
-    padding: 0;
-    border-radius: 22px;
-    object-fit: cover;
-    object-position: center 24%;
-    background: rgba(255, 255, 255, 0.18);
-    mask-image: linear-gradient(to bottom, #000 0%, #000 76%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 76%, transparent 100%);
-    filter: saturate(0.96) contrast(1.02);
+    inset: auto;
+    padding: 26px 16px 12px;
+    border-radius: 0;
+    object-fit: contain;
+    object-position: center;
+    background: transparent;
+    mask-image: none;
+    -webkit-mask-image: none;
+    filter: none;
   }
 
   .product-content p {
-    margin-top: 10px;
-    font-size: 0.82rem;
-    line-height: 1.48;
+    margin-top: 8px;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--muted);
   }
 
   .product-card.has-uploaded-media .product-content {
-    padding-top: 150px;
+    padding-top: 0;
   }
 
   .product-card.has-uploaded-media .tag {
     z-index: 3;
+    top: 12px;
+    left: 12px;
+    right: auto;
+    padding: 8px 12px;
+    font-size: 0.76rem;
+    background: rgba(255, 255, 255, 0.96);
+  }
+
+  .accent-blue,
+  .accent-silver,
+  .accent-steel {
+    background: #fff;
+    color: var(--ink);
+  }
+
+  .accent-steel .product-content p,
+  .accent-blue .product-content p,
+  .accent-silver .product-content p {
+    color: var(--muted);
+  }
+
+  .product-card .card-link {
+    width: 46px;
+    height: 46px;
+    right: 14px;
+    bottom: 14px;
+    background: #f4f6fa;
+    box-shadow: none;
   }
 
   .solution-card {
