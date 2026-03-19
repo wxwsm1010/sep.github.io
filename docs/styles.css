@@ -1748,7 +1748,7 @@ button {
   .card-rail,
   .card-rail.compact {
     grid-auto-flow: column;
-    grid-auto-columns: minmax(88vw, 88vw);
+    grid-auto-columns: minmax(84vw, 84vw);
     gap: 12px;
     overflow-x: auto;
     overflow-y: hidden;
@@ -1775,8 +1775,8 @@ button {
   }
 
   .product-card {
-    min-height: 0;
-    padding: 16px;
+    min-height: 332px;
+    padding: 18px;
   }
 
   .product-card.has-uploaded-media {
@@ -1784,6 +1784,10 @@ button {
     flex-direction: column;
     justify-content: flex-end;
     overflow: hidden;
+  }
+
+  .product-content {
+    max-width: 100%;
   }
 
   .product-content h3,
@@ -1799,8 +1803,16 @@ button {
   }
 
   .product-card.has-uploaded-media .product-visual {
-    inset: 10px 10px 102px;
+    inset: 14px 14px 118px;
     padding: 0;
+    object-fit: contain;
+    object-position: center 58%;
+  }
+
+  .product-content p {
+    margin-top: 10px;
+    font-size: 0.82rem;
+    line-height: 1.48;
   }
 
   .solution-card {

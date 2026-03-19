@@ -14,6 +14,16 @@ const HOME_MEDIA = {
   ],
 };
 
+const PRODUCT_CARD_MEDIA = [
+  "./切片机总目录/全自动切片机/SS-A300/SS-A300-1.png",
+  "./切片机总目录/半自动切片机/SS-350B/SS-350B-1.png",
+  "./切片机总目录/立式切片机/SS-F350C1/SS-F350C1-1.png",
+  "./切片机总目录/智能机/SS-F350H/SS-F350H-1.png",
+  "./切片机总目录/全自动切片机/SS-A350/SS-A350-1.png",
+  "./切片机总目录/全自动切片机/SS-A300C/SS-A300C-1.png",
+  "./切片机总目录/半自动切片机/SS-250C SS-300C/SS-250C SS-300C-1.png",
+];
+
 const DESIRED_HERO_ORDER = [
   "./products.html",
   "./products.html?category=semi-automatic",
@@ -405,21 +415,21 @@ const defaultSiteContent = {
         tag: { zh: "核心产品", en: "Core Product" },
         title: { zh: "全自动切片机", en: "Automatic Slicer" },
         desc: { zh: "高产能、高精度，支持连续作业。", en: "High output and precision for continuous operation." },
-        image: "",
+        image: PRODUCT_CARD_MEDIA[0],
         href: "./products.html?category=automatic",
       },
       {
         tag: { zh: "高性价比", en: "Cost Effective" },
         title: { zh: "半自动切片机", en: "Semi-automatic Slicer" },
         desc: { zh: "操作简单，灵活适配小批量生产。", en: "Simple to run and ideal for flexible low-volume production." },
-        image: "",
+        image: PRODUCT_CARD_MEDIA[1],
         href: "./products.html?category=semi-automatic",
       },
       {
         tag: { zh: "新品", en: "New" },
         title: { zh: "立式切片机", en: "Vertical Slicer" },
         desc: { zh: "占地小、切割稳定，适合特殊物料加工。", en: "Compact and stable cutting for specialized materials." },
-        image: "",
+        image: PRODUCT_CARD_MEDIA[2],
         href: "./products.html?category=vertical",
       },
       {
@@ -429,7 +439,7 @@ const defaultSiteContent = {
           zh: "支持配方管理、参数监控与产线联动，适合数字化升级工厂。",
           en: "Recipe control, parameter monitoring, and line integration for digital production upgrades.",
         },
-        image: "",
+        image: PRODUCT_CARD_MEDIA[3],
         href: "./products.html?category=smart",
       },
       {
@@ -439,7 +449,7 @@ const defaultSiteContent = {
           zh: "适配低温冻品切片，切面整齐，适合肉类加工企业。",
           en: "Designed for frozen material slicing with clean surfaces for meat processing plants.",
         },
-        image: "",
+        image: PRODUCT_CARD_MEDIA[4],
         href: "./products.html",
       },
       {
@@ -449,7 +459,7 @@ const defaultSiteContent = {
           zh: "支持联线输送与多工位协作，满足复杂节拍与定制切型需求。",
           en: "Integrated conveying and multi-station workflows for custom cut profiles and takt requirements.",
         },
-        image: "",
+        image: PRODUCT_CARD_MEDIA[5],
         href: "#solutions",
       },
       {
@@ -459,7 +469,7 @@ const defaultSiteContent = {
           zh: "提供刀组、易损件和维保支持，保障设备稳定运行。",
           en: "Blade sets, wear parts, and maintenance support to keep production running smoothly.",
         },
-        image: "",
+        image: PRODUCT_CARD_MEDIA[6],
         href: "#contact",
       },
     ],
@@ -781,6 +791,24 @@ const ensureRequiredContent = (content) => {
         (!card.image || card.image.includes("/切片机总目录/") || card.image.includes("./切片机总目录/"))
       ) {
         card.image = HOME_MEDIA.solutions[index];
+      }
+    });
+  }
+
+  if (Array.isArray(content.products?.cards)) {
+    content.products.cards.forEach((card, index) => {
+      if (
+        card &&
+        PRODUCT_CARD_MEDIA[index] &&
+        (
+          !card.image ||
+          card.image.includes("/切片机总目录/") ||
+          card.image.includes("./切片机总目录/") ||
+          card.image.includes("/home_media/") ||
+          card.image.includes("./home_media/")
+        )
+      ) {
+        card.image = PRODUCT_CARD_MEDIA[index];
       }
     });
   }
