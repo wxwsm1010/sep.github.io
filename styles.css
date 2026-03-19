@@ -1478,14 +1478,18 @@ button {
   }
 
   .page-shell {
-    padding-top: 8px;
+    padding-top: 6px;
   }
 
   .site-header {
-    top: 8px;
+    top: 6px;
     padding: 10px 12px;
     gap: 6px;
-    border-radius: 18px;
+    border: 1px solid rgba(16, 26, 43, 0.06);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 12px 28px rgba(16, 26, 43, 0.08);
     grid-template-columns: minmax(0, 1fr) auto auto;
   }
 
@@ -1548,31 +1552,15 @@ button {
   }
 
   .brand .brand-mark {
-    width: 40px;
-    height: 36px;
-    flex-basis: 40px;
-    grid-template-columns: repeat(4, 7px);
-    gap: 4px;
+    width: 30px;
+    height: 30px;
+    flex-basis: 30px;
+    grid-template-columns: none;
+    gap: 0;
   }
 
   .brand .brand-mark span {
-    width: 7px;
-  }
-
-  .brand .brand-mark span:nth-child(1) {
-    height: 16px;
-  }
-
-  .brand .brand-mark span:nth-child(2) {
-    height: 26px;
-  }
-
-  .brand .brand-mark span:nth-child(3) {
-    height: 36px;
-  }
-
-  .brand .brand-mark span:nth-child(4) {
-    height: 20px;
+    display: none;
   }
 
   .brand .brand-logo-image {
@@ -1591,7 +1579,7 @@ button {
 
   .brand-text strong,
   .footer-logo strong {
-    font-size: 0.76rem;
+    font-size: 0.92rem;
     letter-spacing: -0.02em;
   }
 
@@ -1603,7 +1591,7 @@ button {
     white-space: normal;
     overflow: visible;
     text-overflow: clip;
-    line-height: 1.12;
+    line-height: 1.08;
   }
 
   .header-actions {
@@ -1632,43 +1620,43 @@ button {
   }
 
   .hero {
-    padding: 18px 0 42px;
+    padding: 14px 0 28px;
   }
 
   .eyebrow {
     gap: 8px;
     margin-bottom: 8px;
-    font-size: 0.78rem;
+    font-size: 0.72rem;
     letter-spacing: 0.04em;
   }
 
   .eyebrow::before {
-    width: 28px;
+    width: 24px;
   }
 
   .hero h1 {
-    font-size: 1.56rem;
-    line-height: 1.14;
+    font-size: 1.42rem;
+    line-height: 1.12;
     letter-spacing: -0.05em;
   }
 
   .hero-copy {
-    margin-bottom: 14px;
+    margin-bottom: 10px;
     text-align: left;
   }
 
   .hero-copy p {
     margin-top: 10px;
-    font-size: 0.86rem;
-    line-height: 1.58;
+    font-size: 0.82rem;
+    line-height: 1.54;
   }
 
   .hero-actions,
   .slide-actions {
     flex-direction: column;
     align-items: stretch;
-    gap: 10px;
-    margin-top: 18px;
+    gap: 8px;
+    margin-top: 14px;
   }
 
   .hero-actions .primary-btn,
@@ -1676,43 +1664,43 @@ button {
   .slide-actions .primary-btn,
   .slide-actions .ghost-btn {
     width: 100%;
-    min-height: 44px;
-    font-size: 0.92rem;
+    min-height: 42px;
+    font-size: 0.88rem;
   }
 
   .hero-track {
-    min-height: 500px;
+    min-height: 430px;
   }
 
   .hero-slide {
     grid-template-columns: 1fr;
-    gap: 12px;
-    padding: 18px 14px 24px;
-    border-radius: 22px;
+    gap: 10px;
+    padding: 16px 14px 18px;
+    border-radius: 20px;
   }
 
   .hero-machine {
-    min-height: 160px;
+    min-height: 136px;
   }
 
   .hero-slide h2 {
-    font-size: 1.2rem;
+    font-size: 1.06rem;
     line-height: 1.2;
-    margin: 10px 0 8px;
+    margin: 8px 0 6px;
   }
 
   .hero-slide p {
-    font-size: 0.82rem;
-    line-height: 1.56;
+    font-size: 0.76rem;
+    line-height: 1.5;
   }
 
   .machine-card {
-    min-height: 160px;
-    border-radius: 18px;
+    min-height: 136px;
+    border-radius: 16px;
   }
 
   .machine {
-    inset: 16px 12px 28px;
+    inset: 14px 10px 22px;
   }
 
   .machine-notes {
@@ -1728,7 +1716,7 @@ button {
   }
 
   .section {
-    padding-top: 44px;
+    padding-top: 30px;
   }
 
   .section-heading {
@@ -1743,8 +1731,8 @@ button {
 
   .section h2,
   .about h2 {
-    font-size: 1.66rem;
-    line-height: 1.16;
+    font-size: 1.36rem;
+    line-height: 1.14;
     letter-spacing: -0.05em;
   }
 
@@ -1753,18 +1741,18 @@ button {
   .news-card p,
   .product-content p,
   .solution-copy p {
-    font-size: 0.9rem;
-    line-height: 1.68;
+    font-size: 0.82rem;
+    line-height: 1.56;
   }
 
   .card-rail,
   .card-rail.compact {
     grid-auto-flow: column;
-    grid-auto-columns: minmax(86vw, 86vw);
-    gap: 14px;
+    grid-auto-columns: minmax(88vw, 88vw);
+    gap: 12px;
     overflow-x: auto;
     overflow-y: hidden;
-    padding-bottom: 6px;
+    padding: 0 0 6px;
     scroll-snap-type: x mandatory;
   }
 
@@ -1788,7 +1776,7 @@ button {
 
   .product-card {
     min-height: 0;
-    padding: 18px;
+    padding: 16px;
   }
 
   .product-card.has-uploaded-media {
@@ -1801,17 +1789,17 @@ button {
   .product-content h3,
   .solution-copy h3,
   .news-card h3 {
-    font-size: 1.3rem;
+    font-size: 1.12rem;
     line-height: 1.16;
   }
 
   .card-machine {
-    height: 180px;
-    margin: 28px 0 8px;
+    height: 146px;
+    margin: 22px 0 8px;
   }
 
   .product-card.has-uploaded-media .product-visual {
-    inset: 10px 10px 116px;
+    inset: 10px 10px 102px;
     padding: 0;
   }
 
@@ -1820,11 +1808,11 @@ button {
   }
 
   .solution-visual {
-    height: 190px;
+    height: 156px;
   }
 
   .solution-copy {
-    padding: 18px 18px 60px;
+    padding: 16px 16px 54px;
   }
 
   .stats-panel {
@@ -1845,8 +1833,12 @@ button {
   }
 
   .news-upload {
-    height: 96px;
+    height: 88px;
     margin: -18px -18px 14px;
+  }
+
+  .slider-arrow {
+    display: none !important;
   }
 
   .site-footer {
