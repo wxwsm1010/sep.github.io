@@ -1868,7 +1868,7 @@ button {
   }
 
   .product-media-shell {
-    height: 196px;
+    height: 228px;
     margin: 0 0 16px;
     border-radius: 22px;
     background:
@@ -1897,7 +1897,7 @@ button {
 
   .product-card.has-uploaded-media .product-visual {
     inset: auto;
-    padding: 26px 16px 12px;
+    padding: 14px 8px 4px;
     border-radius: 0;
     object-fit: contain;
     object-position: center;
@@ -1905,7 +1905,7 @@ button {
     mask-image: none;
     -webkit-mask-image: none;
     mix-blend-mode: multiply;
-    filter: contrast(1.04) saturate(0.96);
+    filter: contrast(1.03) saturate(0.97);
   }
 
   .product-content p {
