@@ -1738,7 +1738,7 @@ button {
   }
 
   .hero-machine {
-    min-height: 136px;
+    min-height: 182px;
   }
 
   .hero-slide h2 {
@@ -1764,11 +1764,17 @@ button {
   }
 
   .machine-card {
-    min-height: 136px;
+    min-height: 182px;
     border-radius: 16px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(246, 248, 251, 0.88));
     border-color: rgba(17, 23, 34, 0.06);
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+  }
+
+  .machine-card.has-uploaded-media .hero-visual,
+  .machine-card.has-uploaded-media .hero-video {
+    transform: scale(1.34);
+    transform-origin: center center;
   }
 
   .machine {
