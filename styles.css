@@ -988,9 +988,10 @@ button {
   object-fit: contain;
   object-position: center;
   padding: 34px 20px 14px;
-  mix-blend-mode: multiply;
+  mix-blend-mode: normal;
   background: transparent;
-  filter: contrast(1.04) saturate(0.96);
+  filter: none;
+  opacity: 1;
 }
 
 .product-card.is-no-media .product-visual {
@@ -1910,8 +1911,9 @@ button {
     background: transparent;
     mask-image: none;
     -webkit-mask-image: none;
-    mix-blend-mode: multiply;
-    filter: contrast(1.03) saturate(0.97);
+    mix-blend-mode: normal;
+    filter: none;
+    opacity: 1;
   }
 
   .product-content p {
