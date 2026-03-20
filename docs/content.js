@@ -57,6 +57,7 @@ const defaultSiteContent = {
     { label: { zh: "半自动切片机", en: "Semi-automatic Slicer" }, href: "./products.html?category=semi-automatic" },
     { label: { zh: "立式切片机", en: "Vertical Slicer" }, href: "./products.html?category=vertical" },
     { label: { zh: "智能切片机", en: "Smart Slicer" }, href: "./products.html?category=smart" },
+    { label: { zh: "鲜肉切片机", en: "Fresh Meat Slicer" }, href: "./products.html?category=fresh-meat" },
   ],
   pages: [
     {
@@ -612,6 +613,7 @@ const defaultSiteContent = {
           { label: { zh: "半自动切片机", en: "Semi-automatic Slicer" }, href: "./products.html?category=semi-automatic" },
           { label: { zh: "立式切片机", en: "Vertical Slicer" }, href: "./products.html?category=vertical" },
           { label: { zh: "智能切片机", en: "Smart Slicer" }, href: "./products.html?category=smart" },
+          { label: { zh: "鲜肉切片机", en: "Fresh Meat Slicer" }, href: "./products.html?category=fresh-meat" },
           { label: { zh: "配件服务", en: "Parts & Service" }, href: "#contact" },
         ],
       },
@@ -662,6 +664,7 @@ const REQUIRED_PRODUCT_MENU_HREFS = [
   "./products.html?category=semi-automatic",
   "./products.html?category=vertical",
   "./products.html?category=smart",
+  "./products.html?category=fresh-meat",
 ];
 
 const deepMerge = (defaults, current) => {

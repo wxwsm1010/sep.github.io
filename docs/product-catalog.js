@@ -15,6 +15,12 @@ const categoryMeta = {
       en: "The automatic line fits central kitchens, meat processing, and scaled food production. Models are grouped for quick evaluation.",
     },
     highlight: { zh: "连续作业", en: "Continuous Output" },
+    fallbackImage: "./切片机总目录/全自动切片机/SS-A300/SS-A300-1.jpg",
+    series: [
+      { key: "belt-auto", name: { zh: "皮带传动切片机", en: "Belt-driven Slicer" } },
+      { key: "mechanical-auto", name: { zh: "机械传动切片机", en: "Mechanical-drive Slicer" } },
+      { key: "smart-auto", name: { zh: "智能全自动切片机", en: "Smart Automatic Slicer" } },
+    ],
     scenes: [
       { zh: "中央厨房", en: "Central Kitchen" },
       { zh: "肉制品加工", en: "Meat Processing" },
@@ -49,6 +55,14 @@ const categoryMeta = {
       en: "The semi-automatic line supports multi-spec and small-batch processing, making model comparison straightforward.",
     },
     highlight: { zh: "灵活易用", en: "Flexible Use" },
+    fallbackImage: "./切片机总目录/半自动切片机/SS-350B/SS-350B-1.jpg",
+    series: [
+      { key: "luxury-semi", name: { zh: "豪华半自动切片机", en: "Luxury Semi-automatic" } },
+      { key: "professional-semi", name: { zh: "专业型半自动系列", en: "Professional Semi-automatic" } },
+      { key: "c-standard-semi", name: { zh: "C 型标准型半自动系列", en: "C-type Standard Semi-automatic" } },
+      { key: "e-standard-semi", name: { zh: "E 型标准型半自动系列", en: "E-type Standard Semi-automatic" } },
+      { key: "h-standard-semi", name: { zh: "H 型标准型半自动系列", en: "H-type Standard Semi-automatic" } },
+    ],
     scenes: [
       { zh: "门店后厨", en: "Back Kitchen" },
       { zh: "小型工厂", en: "Small Factory" },
@@ -83,6 +97,8 @@ const categoryMeta = {
       en: "The vertical line suits tight layouts and operations requiring a focused handling path, with strong visual differentiation across models.",
     },
     highlight: { zh: "紧凑布局", en: "Compact Layout" },
+    fallbackImage: "./切片机总目录/立式切片机/SS-F350C1/SS-F350C1-1.jpg",
+    series: [{ key: "vertical-main", name: { zh: "立式切片机系列", en: "Vertical Slicer Series" } }],
     scenes: [
       { zh: "紧凑工位", en: "Compact Stations" },
       { zh: "特殊物料", en: "Special Materials" },
@@ -117,6 +133,8 @@ const categoryMeta = {
       en: "The smart line targets customers seeking connected management, recipe control, and higher automation capability.",
     },
     highlight: { zh: "智能控制", en: "Smart Control" },
+    fallbackImage: "./切片机总目录/智能机/SS-F350H/SS-F350H-1.jpg",
+    series: [{ key: "smart-main", name: { zh: "智能切片机系列", en: "Smart Slicer Series" } }],
     scenes: [
       { zh: "数字化工厂", en: "Digital Factory" },
       { zh: "联网管理", en: "Connected Management" },
@@ -134,6 +152,42 @@ const categoryMeta = {
       {
         zh: "适用于对自动化体验要求更高的食品加工客户。",
         en: "Suitable for food processors seeking a higher level of automation experience.",
+      },
+    ],
+  },
+  "fresh-meat": {
+    slug: "fresh-meat",
+    name: { zh: "鲜肉切片机", en: "Fresh Meat Slicer" },
+    eyebrow: { zh: "产品分类页", en: "Product Catalog" },
+    title: { zh: "鲜肉切片机系列", en: "Fresh Meat Slicer Series" },
+    description: {
+      zh: "针对鲜肉加工场景，强调切片效率、出片完整度与连续作业稳定性。",
+      en: "Designed for fresh meat processing with strong slicing efficiency, consistency, and throughput.",
+    },
+    intro: {
+      zh: "鲜肉切片机用于肉类门店和加工产线，便于快速完成标准化切片作业。",
+      en: "Fresh meat slicers serve butcher shops and processing lines for standardized slicing operations.",
+    },
+    highlight: { zh: "鲜肉加工", en: "Fresh Meat Processing" },
+    fallbackImage: "./切片机总目录/全自动切片机/SS-A300/SS-A300-1.jpg",
+    series: [{ key: "fresh-main", name: { zh: "鲜肉切片机系列", en: "Fresh Meat Slicer Series" } }],
+    scenes: [
+      { zh: "鲜肉切片", en: "Fresh Meat Slicing" },
+      { zh: "门店后厨", en: "Back Kitchen" },
+      { zh: "冷鲜加工", en: "Cold Fresh Processing" },
+    ],
+    featureSet: [
+      {
+        zh: "适配鲜肉工况，强调连续切片效率与切面整齐度。",
+        en: "Optimized for fresh meat workflows with consistent slicing and clean surfaces.",
+      },
+      {
+        zh: "适合门店和工厂鲜肉切片环节的标准化部署。",
+        en: "Suitable for standardized deployment across retail and factory workflows.",
+      },
+      {
+        zh: "兼顾出片稳定性和操作便捷性。",
+        en: "Balances slice consistency with simple operation.",
       },
     ],
   },
@@ -339,6 +393,7 @@ const productEntries = [
     category: "automatic",
     slug: "automatic-ss-a250",
     model: "SS-A250",
+    series: "belt-auto",
     folder: "./切片机总目录/全自动切片机/SS-A250",
     images: ["SS-A250-1.png", "SS-A250-2.png"],
   },
@@ -346,6 +401,7 @@ const productEntries = [
     category: "automatic",
     slug: "automatic-ss-a300",
     model: "SS-A300",
+    series: "belt-auto",
     folder: "./切片机总目录/全自动切片机/SS-A300",
     images: ["SS-A300-1.png", "SS-A300-2.png"],
   },
@@ -353,6 +409,7 @@ const productEntries = [
     category: "automatic",
     slug: "automatic-ss-a300b",
     model: "SS-A300B",
+    series: "mechanical-auto",
     folder: "./切片机总目录/全自动切片机/SS-A300B",
     images: ["SS-A300B-1.png", "SS-A300B-2.png"],
   },
@@ -360,6 +417,7 @@ const productEntries = [
     category: "automatic",
     slug: "automatic-ss-a300c",
     model: "SS-A300C",
+    series: "belt-auto",
     folder: "./切片机总目录/全自动切片机/SS-A300C",
     images: ["SS-A300C-1.png", "SS-A300C-2.png"],
   },
@@ -367,6 +425,7 @@ const productEntries = [
     category: "automatic",
     slug: "automatic-ss-a350",
     model: "SS-A350",
+    series: "belt-auto",
     folder: "./切片机总目录/全自动切片机/SS-A350",
     images: ["SS-A350-1.png", "SS-A350-2.png"],
   },
@@ -374,6 +433,7 @@ const productEntries = [
     category: "automatic",
     slug: "automatic-ss-a350b",
     model: "SS-A350B",
+    series: "mechanical-auto",
     folder: "./切片机总目录/全自动切片机/SS-A350B",
     images: ["SS-A350B-1.png", "SS-A350B-2.png"],
   },
@@ -381,6 +441,7 @@ const productEntries = [
     category: "semi-automatic",
     slug: "semi-automatic-ss-250-ss-300",
     model: "SS-250 / SS-300",
+    series: "luxury-semi",
     folder: "./切片机总目录/半自动切片机/SS-250 SS-300",
     images: ["SS-250 SS-300-1.png", "SS-250 SS-300-2.png"],
   },
@@ -388,6 +449,7 @@ const productEntries = [
     category: "semi-automatic",
     slug: "semi-automatic-ss-250b-ss-300b",
     model: "SS-250B / SS-300B",
+    series: "professional-semi",
     folder: "./切片机总目录/半自动切片机/SS-250B SS-300B",
     images: ["SS-250B SS-300B-1.png", "SS-250B SS-300B-2.png"],
   },
@@ -395,6 +457,7 @@ const productEntries = [
     category: "semi-automatic",
     slug: "semi-automatic-ss-250c-ss-300c",
     model: "SS-250C / SS-300C",
+    series: "c-standard-semi",
     folder: "./切片机总目录/半自动切片机/SS-250C SS-300C",
     images: ["SS-250C SS-300C-1.png", "SS-250C SS-300C-2.png"],
   },
@@ -402,6 +465,7 @@ const productEntries = [
     category: "semi-automatic",
     slug: "semi-automatic-ss-250e-ss-300e-ss-350e",
     model: "SS-250E / SS-300E / SS-350E",
+    series: "e-standard-semi",
     folder: "./切片机总目录/半自动切片机/SS-250E SS-300E SS-350E",
     images: ["SS-250E SS-300E SS-350E-1.png", "SS-250E SS-300E SS-350E-2.png"],
   },
@@ -409,13 +473,47 @@ const productEntries = [
     category: "semi-automatic",
     slug: "semi-automatic-ss-350b",
     model: "SS-350B",
+    series: "professional-semi",
     folder: "./切片机总目录/半自动切片机/SS-350B",
     images: ["SS-350B-1.png", "SS-350B-2.png"],
+  },
+  {
+    category: "semi-automatic",
+    slug: "semi-automatic-ss-220c",
+    model: "SS-220C",
+    series: "c-standard-semi",
+    folder: "",
+    images: [],
+  },
+  {
+    category: "semi-automatic",
+    slug: "semi-automatic-ss-275e",
+    model: "SS-275E",
+    series: "e-standard-semi",
+    folder: "",
+    images: [],
+  },
+  {
+    category: "semi-automatic",
+    slug: "semi-automatic-ss-330e",
+    model: "SS-330E",
+    series: "e-standard-semi",
+    folder: "",
+    images: [],
+  },
+  {
+    category: "semi-automatic",
+    slug: "semi-automatic-ss-300h",
+    model: "SS-300H",
+    series: "h-standard-semi",
+    folder: "",
+    images: [],
   },
   {
     category: "vertical",
     slug: "vertical-ss-f350c",
     model: "SS-F350C",
+    series: "vertical-main",
     folder: "./切片机总目录/立式切片机/SS-F350C",
     images: ["SS-F350C-1.png", "SS-F350C-2.png", "SS-F350C-3.png"],
   },
@@ -423,6 +521,7 @@ const productEntries = [
     category: "vertical",
     slug: "vertical-ss-f350c1",
     model: "SS-F350C1",
+    series: "vertical-main",
     folder: "./切片机总目录/立式切片机/SS-F350C1",
     images: ["SS-F350C1-1.png", "SS-F350C1-2.png", "SS-F350C1-3.png"],
   },
@@ -430,30 +529,65 @@ const productEntries = [
     category: "vertical",
     slug: "vertical-ss-f350c5",
     model: "SS-F350C5",
+    series: "vertical-main",
     folder: "./切片机总目录/立式切片机/SS-F350C5",
     images: ["SS-F350C5-1.png", "SS-F350C5-2.png", "SS-F350C5-3.png"],
-  },
-  {
-    category: "vertical",
-    slug: "vertical-ss-f350h",
-    model: "SS-F350H",
-    folder: "./切片机总目录/立式切片机/SS-F350H",
-    images: ["SS-F350H-1.png", "SS-F350H-2.png", "SS-F350H-3.png"],
   },
   {
     category: "smart",
     slug: "smart-ss-f350h",
     model: "SS-F350H",
+    series: "smart-main",
     folder: "./切片机总目录/智能机/SS-F350H",
     images: ["SS-F350H-1.png", "SS-F350H-2.png", "SS-F350H-3.png"],
+  },
+  {
+    category: "automatic",
+    slug: "automatic-ss-a330h",
+    model: "SS-A330H",
+    series: "smart-auto",
+    folder: "",
+    images: [],
+  },
+  {
+    category: "automatic",
+    slug: "automatic-ss-a350h",
+    model: "SS-A350H",
+    series: "smart-auto",
+    folder: "",
+    images: [],
+  },
+  {
+    category: "smart",
+    slug: "smart-ss-a330h",
+    model: "SS-A330H",
+    series: "smart-main",
+    folder: "",
+    images: [],
+  },
+  {
+    category: "smart",
+    slug: "smart-ss-a350h",
+    model: "SS-A350H",
+    series: "smart-main",
+    folder: "",
+    images: [],
+  },
+  {
+    category: "fresh-meat",
+    slug: "fresh-meat-ss-300v5",
+    model: "SS-300V5",
+    series: "fresh-main",
+    folder: "",
+    images: [],
   },
 ];
 
 const makeProduct = (entry) => {
   const meta = categoryMeta[entry.category];
   const brochure = brochureDataBySlug[entry.slug] || { brochureImages: [], specs: [] };
-  const gallery = entry.images.map((image) => catalogAsset(`${entry.folder}/${image}`));
-  const heroImage = gallery[0] || "";
+  const gallery = entry.folder ? entry.images.map((image) => catalogAsset(`${entry.folder}/${image}`)) : [];
+  const heroImage = gallery[0] || meta.fallbackImage || "";
   return {
     ...entry,
     name: {
@@ -507,12 +641,19 @@ const products = productEntries.map(makeProduct);
 
 const categories = Object.values(categoryMeta).map((meta) => {
   const models = products.filter((product) => product.category === meta.slug);
+  const seriesGroups = (meta.series || [])
+    .map((series) => ({
+      ...series,
+      models: models.filter((model) => model.series === series.key),
+    }))
+    .filter((series) => series.models.length > 0);
   return {
     ...meta,
     modelCount: models.length,
     imageCount: models.reduce((sum, model) => sum + model.gallery.length, 0),
     coverImage: models[0]?.heroImage || "",
     models,
+    seriesGroups,
   };
 });
 

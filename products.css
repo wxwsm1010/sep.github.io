@@ -137,6 +137,38 @@
   gap: 24px;
 }
 
+.series-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.series-group {
+  border: 1px solid rgba(21, 27, 39, 0.08);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.72);
+  padding: 16px;
+}
+
+.series-group-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  gap: 12px;
+}
+
+.series-group-head h3 {
+  margin: 0;
+  font-family: "Sora", sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+
+.series-group-head span {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
 .catalog-category {
   padding: 28px;
 }
@@ -194,6 +226,23 @@
   min-height: 240px;
   padding: 16px 16px 0;
   background: transparent;
+}
+
+.model-card-media.no-image {
+  display: grid;
+  place-items: center;
+  min-height: 200px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #f5f7fb, #ebeff6);
+  border: 1px dashed rgba(21, 27, 39, 0.18);
+  text-align: center;
+}
+
+.model-card-media.no-image span {
+  font-family: "Sora", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: rgba(21, 27, 39, 0.68);
 }
 
 .model-card-copy {

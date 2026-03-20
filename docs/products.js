@@ -104,8 +104,8 @@ const renderCatalogHero = () => {
   const description = selectedCategory
     ? selectedCategory.description
     : {
-        zh: "覆盖全自动、半自动、立式与智能切片机四大类别，按型号快速进入详情页。",
-        en: "Browse all automatic, semi-automatic, vertical, and smart slicer categories, then open each model detail page.",
+        zh: "覆盖全自动、半自动、立式、智能与鲜肉切片机五大类别，按系列与型号快速进入详情页。",
+        en: "Browse five product categories and open model detail pages by series and model.",
       };
   const eyebrow = selectedCategory ? selectedCategory.eyebrow : { zh: "产品分类页", en: "Product Catalog" };
   const cover = selectedCategory?.coverImage || catalog.categories[0]?.coverImage || "";
@@ -129,7 +129,7 @@ const renderFilter = () => {
     `
       <a href="./products.html" class="${selectedCategory ? "" : "is-active"}">
         <strong>${t({ zh: "全部产品", en: "All Products" })}</strong>
-        <small>${t({ zh: "查看四大类与全部型号", en: "Browse all categories and models" })}</small>
+        <small>${t({ zh: "查看五大类与全部型号", en: "Browse all categories and models" })}</small>
       </a>
     `,
     ...catalog.categories.map(
@@ -153,6 +153,49 @@ const renderCatalogSections = () => {
   const root = document.querySelector("#catalog-grid");
   if (!root) return;
 
+  const renderModelCard = (category, model) => {
+    const media = model.heroImage
+      ? `<a class="model-card-media" href="./product-detail.html?slug=${model.slug}" aria-label="${t(model.name)}">
+            <img src="${model.heroImage}" alt="${t(model.name)}" />
+          </a>`
+      : `<a class="model-card-media no-image" href="./product-detail.html?slug=${model.slug}" aria-label="${t(model.name)}">
+            <span>${model.model}</span>
+          </a>`;
+
+    return `
+      <article class="model-card">
+        ${media}
+        <div class="model-card-copy">
+          <span class="eyebrow compact">${t(category.name)}</span>
+          <h3>${model.model}</h3>
+          <p>${t(model.summary)}</p>
+          <div class="model-card-chips">
+            ${category.scenes.map((scene) => `<span>${t(scene)}</span>`).join("")}
+          </div>
+          <div class="model-card-actions">
+            <a class="primary-btn" href="./product-detail.html?slug=${model.slug}">${t({
+              zh: "查看详情页",
+              en: "Open Detail Page",
+            })}</a>
+            <a class="ghost-btn dark" href="#contact">${t({ zh: "立即咨询", en: "Contact Us" })}</a>
+          </div>
+        </div>
+      </article>
+    `;
+  };
+
+  const renderSeriesGroup = (category, series) => `
+    <section class="series-group">
+      <div class="series-group-head">
+        <h3>${t(series.name)}</h3>
+        <span>${series.models.length} ${t({ zh: "个型号", en: "models" })}</span>
+      </div>
+      <div class="model-grid">
+        ${series.models.map((model) => renderModelCard(category, model)).join("")}
+      </div>
+    </section>
+  `;
+
   root.innerHTML = visibleCategories
     .map(
       (category) => `
@@ -168,33 +211,12 @@ const renderCatalogSections = () => {
               <span>${category.imageCount} ${t({ zh: "张实拍图", en: "photo assets" })}</span>
             </div>
           </div>
-          <div class="model-grid">
-            ${category.models
-              .map(
-                (model) => `
-                  <article class="model-card">
-                    <a class="model-card-media" href="./product-detail.html?slug=${model.slug}" aria-label="${t(model.name)}">
-                      <img src="${model.heroImage}" alt="${t(model.name)}" />
-                    </a>
-                    <div class="model-card-copy">
-                      <span class="eyebrow compact">${t(category.name)}</span>
-                      <h3>${model.model}</h3>
-                      <p>${t(model.summary)}</p>
-                      <div class="model-card-chips">
-                        ${category.scenes.map((scene) => `<span>${t(scene)}</span>`).join("")}
-                      </div>
-                      <div class="model-card-actions">
-                        <a class="primary-btn" href="./product-detail.html?slug=${model.slug}">${t({
-                          zh: "查看详情页",
-                          en: "Open Detail Page",
-                        })}</a>
-                        <a class="ghost-btn dark" href="#contact">${t({ zh: "立即咨询", en: "Contact Us" })}</a>
-                      </div>
-                    </div>
-                  </article>
-                `,
-              )
-              .join("")}
+          <div class="series-grid">
+            ${
+              category.seriesGroups?.length
+                ? category.seriesGroups.map((series) => renderSeriesGroup(category, series)).join("")
+                : `<div class="model-grid">${category.models.map((model) => renderModelCard(category, model)).join("")}</div>`
+            }
           </div>
         </section>
       `,
