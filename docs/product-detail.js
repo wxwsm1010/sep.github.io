@@ -203,7 +203,7 @@ const renderDetail = () => {
       .map(
         (image, index) => `
           <figure class="is-zoomable" data-lightbox-src="${image}" data-lightbox-alt="${t(product.name)} ${index + 1}" tabindex="0" role="button" aria-label="${t({ zh: "点击放大查看产品图", en: "Open product image preview" })}">
-            <img src="${image}" alt="${t(product.name)} ${index + 1}" />
+            <img src="${image}" alt="${t(product.name)} ${index + 1}" loading="lazy" decoding="async" />
           </figure>
         `,
       )
@@ -216,7 +216,7 @@ const renderDetail = () => {
       .map(
         (image, index) => `
           <figure class="is-zoomable" data-lightbox-src="${toFullResBrochureSrc(image)}" data-lightbox-alt="${t(product.name)} ${t({ zh: "宣传册参数页", en: "Brochure Page" })} ${index + 1}" tabindex="0" role="button" aria-label="${t({ zh: "点击放大查看宣传册参数页", en: "Open brochure page preview" })}">
-            <img src="${image}" alt="${t(product.name)} ${t({ zh: "宣传册参数页", en: "Brochure Page" })} ${index + 1}" />
+            <img src="${image}" alt="${t(product.name)} ${t({ zh: "宣传册参数页", en: "Brochure Page" })} ${index + 1}" loading="lazy" decoding="async" />
           </figure>
         `,
       )

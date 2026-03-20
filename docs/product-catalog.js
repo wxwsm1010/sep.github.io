@@ -1,4 +1,9 @@
 const catalogAsset = (path) => encodeURI(path);
+const toWebAssetPath = (path) =>
+  path
+    .replace(/\.png$/i, ".jpg")
+    .replace(/\.jpeg$/i, ".jpg")
+    .replace(/\.jpg$/i, "-web.jpg");
 
 const categoryMeta = {
   automatic: {
@@ -586,8 +591,8 @@ const productEntries = [
 const makeProduct = (entry) => {
   const meta = categoryMeta[entry.category];
   const brochure = brochureDataBySlug[entry.slug] || { brochureImages: [], specs: [] };
-  const gallery = entry.folder ? entry.images.map((image) => catalogAsset(`${entry.folder}/${image}`)) : [];
-  const heroImage = gallery[0] || meta.fallbackImage || "";
+  const gallery = entry.folder ? entry.images.map((image) => catalogAsset(`${entry.folder}/${toWebAssetPath(image)}`)) : [];
+  const heroImage = gallery[0] || (meta.fallbackImage ? catalogAsset(toWebAssetPath(meta.fallbackImage)) : "");
   return {
     ...entry,
     name: {

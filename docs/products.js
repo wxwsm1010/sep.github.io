@@ -156,7 +156,7 @@ const renderCatalogSections = () => {
   const renderModelCard = (category, model) => {
     const media = model.heroImage
       ? `<a class="model-card-media" href="./product-detail.html?slug=${model.slug}" aria-label="${t(model.name)}">
-            <img src="${model.heroImage}" alt="${t(model.name)}" />
+            <img src="${model.heroImage}" alt="${t(model.name)}" loading="lazy" decoding="async" />
           </a>`
       : `<a class="model-card-media no-image" href="./product-detail.html?slug=${model.slug}" aria-label="${t(model.name)}">
             <span>${model.model}</span>

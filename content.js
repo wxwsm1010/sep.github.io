@@ -15,13 +15,13 @@ const HOME_MEDIA = {
 };
 
 const PRODUCT_CARD_MEDIA = [
-  "./切片机总目录/全自动切片机/SS-A300/SS-A300-1.jpg",
-  "./切片机总目录/半自动切片机/SS-350B/SS-350B-1.jpg",
-  "./切片机总目录/立式切片机/SS-F350C1/SS-F350C1-1.jpg",
-  "./切片机总目录/智能机/SS-F350H/SS-F350H-1.jpg",
-  "./切片机总目录/全自动切片机/SS-A350/SS-A350-1.jpg",
-  "./切片机总目录/全自动切片机/SS-A300C/SS-A300C-1.jpg",
-  "./切片机总目录/半自动切片机/SS-250C SS-300C/SS-250C SS-300C-1.jpg",
+  "./切片机总目录/全自动切片机/SS-A300/SS-A300-1-web.jpg",
+  "./切片机总目录/半自动切片机/SS-350B/SS-350B-1-web.jpg",
+  "./切片机总目录/立式切片机/SS-F350C1/SS-F350C1-1-web.jpg",
+  "./切片机总目录/智能机/SS-F350H/SS-F350H-1-web.jpg",
+  "./切片机总目录/全自动切片机/SS-A350/SS-A350-1-web.jpg",
+  "./切片机总目录/全自动切片机/SS-A300C/SS-A300C-1-web.jpg",
+  "./切片机总目录/半自动切片机/SS-250C SS-300C/SS-250C SS-300C-1-web.jpg",
 ];
 
 const DESIRED_HERO_ORDER = [
