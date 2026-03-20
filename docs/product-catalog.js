@@ -1,8 +1,8 @@
 const catalogAsset = (path) => encodeURI(path);
 const toWebAssetPath = (path) =>
   path
-    .replace(/\.png$/i, ".jpg")
-    .replace(/\.jpeg$/i, ".jpg")
+    .replace(/\.png$/i, "-web.png")
+    .replace(/\.jpeg$/i, "-web.jpg")
     .replace(/\.jpg$/i, "-web.jpg");
 
 const categoryMeta = {
@@ -20,7 +20,7 @@ const categoryMeta = {
       en: "The automatic line fits central kitchens, meat processing, and scaled food production. Models are grouped for quick evaluation.",
     },
     highlight: { zh: "连续作业", en: "Continuous Output" },
-    fallbackImage: "./切片机总目录/全自动切片机/SS-A300/SS-A300-1.jpg",
+    fallbackImage: "./切片机总目录/全自动切片机/SS-A300/SS-A300-1.png",
     series: [
       { key: "belt-auto", name: { zh: "皮带传动切片机", en: "Belt-driven Slicer" } },
       { key: "mechanical-auto", name: { zh: "机械传动切片机", en: "Mechanical-drive Slicer" } },
@@ -60,7 +60,7 @@ const categoryMeta = {
       en: "The semi-automatic line supports multi-spec and small-batch processing, making model comparison straightforward.",
     },
     highlight: { zh: "灵活易用", en: "Flexible Use" },
-    fallbackImage: "./切片机总目录/半自动切片机/SS-350B/SS-350B-1.jpg",
+    fallbackImage: "./切片机总目录/半自动切片机/SS-350B/SS-350B-1.png",
     series: [
       { key: "luxury-semi", name: { zh: "豪华半自动切片机", en: "Luxury Semi-automatic" } },
       { key: "professional-semi", name: { zh: "专业型半自动系列", en: "Professional Semi-automatic" } },
@@ -102,7 +102,7 @@ const categoryMeta = {
       en: "The vertical line suits tight layouts and operations requiring a focused handling path, with strong visual differentiation across models.",
     },
     highlight: { zh: "紧凑布局", en: "Compact Layout" },
-    fallbackImage: "./切片机总目录/立式切片机/SS-F350C1/SS-F350C1-1.jpg",
+    fallbackImage: "./切片机总目录/立式切片机/SS-F350C1/SS-F350C1-1.png",
     series: [{ key: "vertical-main", name: { zh: "立式切片机系列", en: "Vertical Slicer Series" } }],
     scenes: [
       { zh: "紧凑工位", en: "Compact Stations" },
@@ -138,7 +138,7 @@ const categoryMeta = {
       en: "The smart line targets customers seeking connected management, recipe control, and higher automation capability.",
     },
     highlight: { zh: "智能控制", en: "Smart Control" },
-    fallbackImage: "./切片机总目录/智能机/SS-F350H/SS-F350H-1.jpg",
+    fallbackImage: "./切片机总目录/智能机/SS-F350H/SS-F350H-1.png",
     series: [{ key: "smart-main", name: { zh: "智能切片机系列", en: "Smart Slicer Series" } }],
     scenes: [
       { zh: "数字化工厂", en: "Digital Factory" },
@@ -174,7 +174,7 @@ const categoryMeta = {
       en: "Fresh meat slicers serve butcher shops and processing lines for standardized slicing operations.",
     },
     highlight: { zh: "鲜肉加工", en: "Fresh Meat Processing" },
-    fallbackImage: "./切片机总目录/全自动切片机/SS-A300/SS-A300-1.jpg",
+    fallbackImage: "./切片机总目录/全自动切片机/SS-A300/SS-A300-1.png",
     series: [{ key: "fresh-main", name: { zh: "鲜肉切片机系列", en: "Fresh Meat Slicer Series" } }],
     scenes: [
       { zh: "鲜肉切片", en: "Fresh Meat Slicing" },
