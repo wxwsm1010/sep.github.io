@@ -4,6 +4,16 @@ let draft = store.load();
 const root = document.querySelector("#admin-root");
 const status = document.querySelector("#status");
 
+const PRODUCT_SERIES = [
+  { key: "automatic", label: "全自动系列", keyword: "全自动", hrefToken: "category=automatic" },
+  { key: "semi-automatic", label: "半自动系列", keyword: "半自动", hrefToken: "category=semi-automatic" },
+  { key: "vertical", label: "立式系列", keyword: "立式", hrefToken: "category=vertical" },
+  { key: "smart", label: "智能系列", keyword: "智能", hrefToken: "category=smart" },
+  { key: "fresh-meat", label: "鲜肉系列", keyword: "鲜肉", hrefToken: "category=fresh-meat" },
+];
+
+const DEFAULT_SERIES = PRODUCT_SERIES[0].key;
+
 const escapeHtml = (value) =>
   String(value ?? "")
     .replaceAll("&", "&amp;")
@@ -12,6 +22,32 @@ const escapeHtml = (value) =>
     .replaceAll('"', "&quot;");
 
 const get = (path) => store.getByPath(draft, path);
+
+const inferSeries = (card = {}) => {
+  const href = String(card.href || "");
+  const zhTitle = String(card.title?.zh || "");
+  const enTitle = String(card.title?.en || "").toLowerCase();
+
+  const byHref = PRODUCT_SERIES.find((series) => href.includes(series.hrefToken));
+  if (byHref) return byHref.key;
+
+  const byKeyword = PRODUCT_SERIES.find(
+    (series) => zhTitle.includes(series.keyword) || enTitle.includes(series.keyword),
+  );
+  if (byKeyword) return byKeyword.key;
+
+  return DEFAULT_SERIES;
+};
+
+const normalizeDraft = () => {
+  if (!Array.isArray(draft.products?.cards)) return;
+  draft.products.cards = draft.products.cards.map((card) => ({
+    ...card,
+    series: PRODUCT_SERIES.some((series) => series.key === card.series) ? card.series : inferSeries(card),
+  }));
+};
+
+normalizeDraft();
 
 const bilingualField = (path, label, type = "text") => `
   <div class="field">
@@ -74,11 +110,22 @@ const mediaUploadField = (
   </div>
 `;
 
-const productCardGroup = (_, index) => `
+const productCardGroup = (_, index, seriesLabel) => `
   <div class="group">
     <div class="group-head">
       <h3>产品卡片 ${index + 1}</h3>
       <button type="button" class="mini-btn danger" data-remove-product="${index}">删除</button>
+    </div>
+    <div class="field">
+      <label>所属系列</label>
+      <select data-path="products.cards.${index}.series">
+        ${PRODUCT_SERIES.map(
+          (series) => `
+          <option value="${series.key}" ${get(`products.cards.${index}.series`) === series.key ? "selected" : ""}>${series.label}</option>
+        `,
+        ).join("")}
+      </select>
+      <span class="hint">当前分段：${seriesLabel}</span>
     </div>
     ${bilingualField(`products.cards.${index}.tag`, "标签")}
     ${bilingualField(`products.cards.${index}.title`, "标题")}
@@ -139,8 +186,50 @@ const slideGroup = (slide, index) => `
   </div>
 `;
 
+const productSeriesGroup = (series) => {
+  const cards = draft.products.cards
+    .map((card, index) => ({ card, index }))
+    .filter(({ card }) => (card.series || inferSeries(card)) === series.key);
+
+  return `
+    <div class="series-block">
+      <div class="series-head">
+        <div>
+          <h3>${series.label}</h3>
+          <p>当前 ${cards.length} 张卡片，单独维护这一系列的标题、文案、图片和跳转链接。</p>
+        </div>
+        <button type="button" class="mini-btn" data-add-product-series="${series.key}">新增${series.label}</button>
+      </div>
+      <div class="grid three">
+        ${
+          cards.length
+            ? cards.map(({ index }) => productCardGroup(draft.products.cards[index], index, series.label)).join("")
+            : '<div class="series-empty">该系列还没有卡片，点击右侧按钮新增。</div>'
+        }
+      </div>
+    </div>
+  `;
+};
+
 const render = () => {
   root.innerHTML = `
+    <section class="panel segment-panel">
+      <div class="panel-head">
+        <h2>后台分段系列总览</h2>
+        <p>按照“模块分段 + 产品系列分段”排版，便于快速定位要编辑的内容。</p>
+      </div>
+      <div class="segment-links">
+        <a href="#section-brand">01 品牌与导航</a>
+        <a href="#section-pages">02 二级页面</a>
+        <a href="#section-hero">03 首页海报</a>
+        <a href="#section-products">04 产品系列</a>
+        <a href="#section-solutions">05 解决方案</a>
+        <a href="#section-about">06 关于我们</a>
+        <a href="#section-news">07 新闻资讯</a>
+        <a href="#section-footer">08 页脚与二维码</a>
+      </div>
+    </section>
+
     <section class="panel" id="section-brand">
       <div class="panel-head">
         <h2>品牌与导航</h2>
@@ -237,18 +326,15 @@ const render = () => {
     <section class="panel" id="section-products">
       <div class="panel-head">
         <h2>产品矩阵</h2>
-        <p>管理首页产品矩阵卡片，支持新增、删除产品卡片和上传产品展示图。</p>
-      </div>
-      <div class="admin-actions">
-        <button type="button" class="mini-btn" id="add-product-btn">新增产品卡片</button>
+        <p>按“全自动 / 半自动 / 立式 / 智能 / 鲜肉”分段系列管理首页产品卡片，可按系列新增和删除。</p>
       </div>
       <div class="grid">
         ${bilingualField("products.heading.eyebrow", "板块眉标题")}
         ${bilingualField("products.heading.title", "板块标题", "textarea")}
       </div>
       ${bilingualField("products.heading.desc", "板块描述", "textarea")}
-      <div class="grid three">
-        ${draft.products.cards.map(productCardGroup).join("")}
+      <div class="series-stack">
+        ${PRODUCT_SERIES.map(productSeriesGroup).join("")}
       </div>
     </section>
 
@@ -423,6 +509,14 @@ root.addEventListener("input", (event) => {
 });
 
 root.addEventListener("change", async (event) => {
+  const selectField = event.target.closest("select[data-path]");
+  if (selectField) {
+    store.setByPath(draft, selectField.dataset.path, selectField.value);
+    render();
+    flash("系列已更新，记得点击“保存发布”。");
+    return;
+  }
+
   const input = event.target.closest("[data-upload-path]");
   if (!input || !input.files?.[0]) return;
   const dataUrl = await readFileAsDataUrl(input.files[0]);
@@ -506,17 +600,35 @@ root.addEventListener("click", (event) => {
     return;
   }
 
-  const addProduct = event.target.closest("#add-product-btn");
-  if (addProduct) {
+  const addProductBySeries = event.target.closest("[data-add-product-series]");
+  if (addProductBySeries) {
+    const series = addProductBySeries.dataset.addProductSeries || DEFAULT_SERIES;
+    const hrefBySeries = {
+      automatic: "./products.html?category=automatic",
+      "semi-automatic": "./products.html?category=semi-automatic",
+      vertical: "./products.html?category=vertical",
+      smart: "./products.html?category=smart",
+      "fresh-meat": "./products.html?category=fresh-meat",
+    };
+    const labelBySeries = {
+      automatic: { zh: "全自动新品", en: "Automatic" },
+      "semi-automatic": { zh: "半自动新品", en: "Semi-auto" },
+      vertical: { zh: "立式新品", en: "Vertical" },
+      smart: { zh: "智能新品", en: "Smart" },
+      "fresh-meat": { zh: "鲜肉新品", en: "Fresh Meat" },
+    };
+
     draft.products.cards.push({
+      series,
       tag: { zh: "新增标签", en: "New Tag" },
       title: { zh: "新增产品", en: "New Product" },
       desc: { zh: "请填写产品描述。", en: "Please enter the product description." },
       image: "",
-      href: "./products.html",
+      href: hrefBySeries[series] || "./products.html",
+      ctaLabel: labelBySeries[series] || { zh: "新品", en: "New" },
     });
     render();
-    flash("已新增产品卡片。");
+    flash("已在对应系列新增产品卡片。");
     return;
   }
 
@@ -533,12 +645,14 @@ root.addEventListener("click", (event) => {
 });
 
 document.querySelector("#save-btn").addEventListener("click", () => {
+  normalizeDraft();
   store.save(draft);
   flash("内容已保存，首页会读取最新配置。");
 });
 
 document.querySelector("#reset-btn").addEventListener("click", () => {
   draft = store.reset();
+  normalizeDraft();
   render();
   flash("已恢复默认内容。");
 });
@@ -558,6 +672,7 @@ document.querySelector("#import-input").addEventListener("change", async (event)
   try {
     const text = await file.text();
     draft = JSON.parse(text);
+    normalizeDraft();
     render();
     flash("配置已导入，确认无误后点击“保存发布”。");
   } catch (error) {

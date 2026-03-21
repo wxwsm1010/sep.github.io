@@ -327,6 +327,37 @@ textarea {
   gap: 18px;
 }
 
+.segment-panel {
+  padding: 22px 24px;
+}
+
+.segment-links {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.segment-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 14px;
+  border: 1px solid rgba(21, 27, 39, 0.08);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.92);
+  color: rgba(21, 27, 39, 0.8);
+  font-size: 0.92rem;
+  transition: 0.22s ease;
+}
+
+.segment-links a:hover {
+  transform: translateY(-1px);
+  border-color: rgba(21, 27, 39, 0.16);
+  color: var(--ink);
+  box-shadow: var(--shadow-soft);
+}
+
 .panel {
   padding: 26px;
   background:
@@ -399,7 +430,8 @@ textarea {
 }
 
 .field input,
-.field textarea {
+.field textarea,
+.field select {
   width: 100%;
   padding: 13px 14px;
   border: 1px solid #dde2eb;
@@ -410,10 +442,56 @@ textarea {
 }
 
 .field input:focus,
-.field textarea:focus {
+.field textarea:focus,
+.field select:focus {
   border-color: rgba(255, 98, 88, 0.4);
   box-shadow: 0 0 0 4px rgba(255, 98, 88, 0.08);
   background: #fff;
+}
+
+.series-stack {
+  display: grid;
+  gap: 16px;
+}
+
+.series-block {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid rgba(21, 27, 39, 0.08);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(247, 248, 250, 0.84));
+}
+
+.series-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(21, 27, 39, 0.08);
+}
+
+.series-head h3 {
+  margin: 0;
+  font-family: "Sora", sans-serif;
+  font-size: 1.02rem;
+}
+
+.series-head p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.series-empty {
+  grid-column: 1 / -1;
+  padding: 16px;
+  border: 1px dashed rgba(21, 27, 39, 0.14);
+  border-radius: 14px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.6);
 }
 
 .field textarea {
@@ -508,12 +586,18 @@ textarea {
 
   .grid,
   .grid.three,
-  .lang-row {
+  .lang-row,
+  .segment-links {
     grid-template-columns: 1fr;
   }
 
   .admin-actions {
     justify-content: stretch;
+  }
+
+  .series-head {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .admin-actions a,
