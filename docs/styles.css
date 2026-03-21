@@ -1251,18 +1251,6 @@ button {
   gap: 22px;
 }
 
-.social-row {
-  display: flex;
-  gap: 12px;
-}
-
-.social-row a {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-}
-
 .qr-grid {
   display: flex;
   flex-wrap: wrap;
@@ -1281,33 +1269,24 @@ button {
   width: 86px;
   height: 86px;
   border-radius: 14px;
-  background:
-    linear-gradient(90deg, #fff 10px, transparent 10px) 0 0 / 18px 18px,
-    linear-gradient(#fff 10px, transparent 10px) 0 0 / 18px 18px,
-    linear-gradient(135deg, #ffffff 0%, #9eb1c7 100%);
-  box-shadow: inset 0 0 0 6px rgba(0, 0, 0, 0.14);
+  border: 1px dashed rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.08);
   background-size: cover;
   background-position: center;
 }
 
 .qr-code::after {
-  content: "";
-  position: absolute;
-  inset: 28px;
-  border-radius: 12px;
-  background: rgba(16, 36, 61, 0.8);
-}
-
-.qr-code.alt::after {
-  background: rgba(242, 166, 90, 0.9);
-}
-
-.qr-code.warm::after {
-  background: rgba(130, 146, 164, 0.95);
-}
-
-.qr-code.has-image::after {
   display: none;
+}
+
+.qr-code.has-image {
+  border-color: transparent;
+  background-color: rgba(255, 255, 255, 0.92);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+.qr-code.no-image {
+  border-style: dashed;
 }
 
 .contact-list {
@@ -2020,15 +1999,6 @@ button {
 
   .footer-logo {
     align-items: center;
-  }
-
-  .social-row {
-    gap: 10px;
-  }
-
-  .social-row a {
-    width: 34px;
-    height: 34px;
   }
 
   .qr-grid {

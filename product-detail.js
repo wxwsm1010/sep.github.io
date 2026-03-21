@@ -63,18 +63,21 @@ const renderFooter = () => {
     bindText(`[data-field="footer.${key}"]`, siteContent.footer[key]);
   });
 
-  document.querySelectorAll("[data-qr-label]").forEach((node) => {
-    const item = siteContent.footer.qr[Number(node.dataset.qrLabel)];
-    if (!item) return;
-    node.textContent = t(item.label);
-  });
-
-  document.querySelectorAll("[data-qr-index]").forEach((node) => {
-    const item = siteContent.footer.qr[Number(node.dataset.qrIndex)];
-    const image = item?.image || "";
-    node.style.backgroundImage = image ? `url(${image})` : "";
-    node.classList.toggle("has-image", Boolean(image));
-  });
+  const qrGrid = document.querySelector("#footer-qr-grid");
+  if (qrGrid) {
+    const items = Array.isArray(siteContent.footer.qr) ? siteContent.footer.qr : [];
+    qrGrid.innerHTML = items
+      .map((item) => {
+        const image = item?.image || "";
+        return `
+          <div class="qr-card">
+            <div class="qr-code ${image ? "has-image" : "no-image"}" ${image ? `style="background-image:url(${image})"` : ""}></div>
+            <span>${t(item?.label || { zh: "未命名二维码", en: "Untitled QR" })}</span>
+          </div>
+        `;
+      })
+      .join("");
+  }
 
   document.querySelectorAll("[data-footer-contact]").forEach((node) => {
     const item = siteContent.footer.contact[Number(node.dataset.footerContact)];

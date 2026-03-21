@@ -429,6 +429,9 @@ const render = () => {
         <h2>页脚与二维码</h2>
         <p>管理页脚品牌信息、二维码、联系方式和底部栏目链接。</p>
       </div>
+      <div class="admin-actions">
+        <button type="button" class="mini-btn" id="add-footer-qr-btn">新增二维码</button>
+      </div>
       <div class="grid">
         ${bilingualField("footer.brandName", "页脚品牌名称")}
         ${bilingualField("footer.brandSub", "页脚副标题")}
@@ -438,7 +441,10 @@ const render = () => {
           .map(
             (_, index) => `
           <div class="group compact">
-            <h3>二维码 ${index + 1}</h3>
+            <div class="group-head">
+              <h3>二维码 ${index + 1}</h3>
+              <button type="button" class="mini-btn danger" data-remove-footer-qr="${index}">删除</button>
+            </div>
             ${bilingualField(`footer.qr.${index}.label`, "名称")}
             ${uploadField(`footer.qr.${index}.image`, "上传二维码", "430 x 430 px", "建议使用正方形二维码，四周保留安静区。", true)}
           </div>
@@ -534,6 +540,29 @@ root.addEventListener("change", async (event) => {
 });
 
 root.addEventListener("click", (event) => {
+  const addFooterQr = event.target.closest("#add-footer-qr-btn");
+  if (addFooterQr) {
+    draft.footer.qr.push({
+      label: { zh: "新增二维码", en: "New QR" },
+      image: "",
+    });
+    render();
+    flash("已新增页脚二维码项。");
+    return;
+  }
+
+  const removeFooterQr = event.target.closest("[data-remove-footer-qr]");
+  if (removeFooterQr) {
+    if (draft.footer.qr.length <= 1) {
+      flash("至少保留 1 个二维码项。");
+      return;
+    }
+    draft.footer.qr.splice(Number(removeFooterQr.dataset.removeFooterQr), 1);
+    render();
+    flash("已删除页脚二维码项。");
+    return;
+  }
+
   const addSlide = event.target.closest("#add-slide-btn");
   if (addSlide) {
     draft.slides.push({
